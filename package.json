@@ -1,0 +1,19 @@
+{
+  "name": "aetherlink-classroom-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Solo practice repository for the AetherLink Worldline Wave 2 classroom (Teaching Days 1-2).",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "mcp": "node mcp-server.mjs",
+    "reset": "git checkout -- ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  }
+}

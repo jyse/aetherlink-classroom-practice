@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Alex Rivera",
+    "role": "Backend Engineer",
+    "team": "Payments Platform",
+    "experience": "5 years in backend systems, new to agentic AI tools",
+    "learningGoal": "Understand how to safely hand a small, well-scoped change to Claude Code and verify the result",
+    "workflowToImprove": "Writing and maintaining integration test fixtures for the settlement service"
+  }
+]

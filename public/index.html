@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AetherLink Classroom Practice</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AetherLink <span>Practice</span></div>
+    <button id="theme-toggle" class="icon-button" aria-label="Toggle light/dark theme">🌓</button>
+  </header>
+
+  <div class="app">
+    <aside class="sidebar">
+      <nav aria-label="Main navigation">
+        <button data-view="profiles" class="selected">Profiles</button>
+        <button data-view="glossary">Glossary</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <p>Solo practice repo.</p>
+        <p>Worldline Wave 2 &middot; AetherLink</p>
+      </div>
+    </aside>
+
+    <main>
+      <section id="view-profiles" class="view">
+        <h1 class="page-heading">Profiles</h1>
+        <p class="page-lede">Participants who have joined the Academy for this cohort.</p>
+        <div id="profiles-list" class="card-grid"></div>
+      </section>
+
+      <section id="view-glossary" class="view" hidden>
+        <h1 class="page-heading">Glossary</h1>
+        <p class="page-lede">AI terms the class has taught the Academy so far.</p>
+        <div id="glossary-list" class="card-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

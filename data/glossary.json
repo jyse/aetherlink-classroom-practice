@@ -1,0 +1,37 @@
+[
+  {
+    "term": "Context window",
+    "definition": "The amount of text (measured in tokens) a model can consider at once, including your prompt, conversation history, and any files or tool output provided to it.",
+    "example": "If a project's coding conventions live in CLAUDE.md, Claude can only follow them consistently if that file fits inside the current context window alongside your actual request.",
+    "commonMisconception": "A bigger context window always produces better answers. In practice, relevant and well-organised context beats a large volume of loosely related text.",
+    "relevance": "Explains why this programme keeps CLAUDE.md and glossary entries short and specific rather than dumping every document into the project."
+  },
+  {
+    "term": "Hallucination",
+    "definition": "A confident-sounding output that is factually wrong or unsupported by the available context, produced because the model generates a plausible continuation rather than a verified fact.",
+    "example": "Claude describing a function or config option that does not exist anywhere in the actual codebase, because it 'looks like' something a project of this shape would have.",
+    "commonMisconception": "Hallucination only happens with weak or old models. Every model can hallucinate, especially when context is missing, ambiguous, or the question sits outside what any file in the project actually shows.",
+    "relevance": "The reason this programme insists on evidence over confidence: a plan, a change, or an answer is a proposal until it has been checked against the real project."
+  },
+  {
+    "term": "Prompt",
+    "definition": "The instruction or question given to a model, including any surrounding context, that shapes the response it generates.",
+    "example": "\"Explore this project. Explain what it does and how it is structured. Do not change anything.\" is a prompt that asks for read-only exploration.",
+    "commonMisconception": "A good prompt is a clever trick or magic phrase. In practice, a good prompt is simply clear about the goal, the constraints, and what evidence is expected back.",
+    "relevance": "Day 1's very first live demo and every assignment in this repository starts from a deliberately written prompt, not an open-ended request."
+  },
+  {
+    "term": "Agent",
+    "definition": "A system that can observe its environment, decide on an action, use tools to act, check the result, and repeat or stop, rather than only returning a single generated answer.",
+    "example": "Claude Code reading a file, forming a plan, editing code, running a test, and reporting the result is acting as an agent; a chat window that only replies with text is not.",
+    "commonMisconception": "Using an agentic tool like Claude Code means you have personally built an agent. Using Claude Code means working with an existing agentic tool; designing your own trigger, tools, and checks is a separate, later step (see Assignment 10).",
+    "relevance": "Distinguishes 'using Claude Code' from 'designing an agent workflow' — the difference the four levels on Day 2 (Ask / Use / Customise / Design) are built around."
+  },
+  {
+    "term": "Tool call",
+    "definition": "A request an AI system makes to run a specific, defined operation — such as reading a file, running a command, or querying an external system — and receive a real result back before continuing.",
+    "example": "Claude Code calling a file-read tool to open package.json before answering a question about this project's available commands.",
+    "commonMisconception": "A tool call always means something was changed. Many tool calls (reading a file, searching text, listing a directory) are read-only observations, not actions with side effects.",
+    "relevance": "MCP (Assignment 9) is a standard way to expose tool calls like get_mission and search_knowledge to Claude Code in a controlled, explain-only way."
+  }
+]
