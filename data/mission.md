@@ -2,7 +2,7 @@
 
 ## Day 1 — Working with AI and Claude Code
 
-Today's mission: use Claude Code to explore the AetherBot Library, add your
+Today's mission: use Claude Code to explore the Aether Library, add your
 own profile, contribute a glossary term, and turn one term into a fully
 enriched concept card — the first entry on the shelf.
 

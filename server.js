@@ -1,4 +1,4 @@
-// Minimal static + JSON-data server for the AetherBot Library practice repo.
+// Minimal static + JSON-data server for the Aether Library practice repo.
 // Deliberately plain: Node's built-in http/fs modules only, no framework, no build step.
 
 import { createServer } from "node:http";
@@ -160,5 +160,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`AetherBot Library running at http://localhost:${PORT}`);
+  console.log(`Aether Library running at http://localhost:${PORT}`);
 });

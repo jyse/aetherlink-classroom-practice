@@ -1,8 +1,8 @@
 {
-  "name": "aetherbot-library",
+  "name": "aether-library",
   "version": "1.0.0",
   "private": true,
-  "description": "Solo practice repository for the AetherLink Worldline Wave 2 classroom (Teaching Days 1-2) — the AetherBot Library practice project.",
+  "description": "Solo practice repository for the AetherLink Worldline Wave 2 classroom (Teaching Days 1-2) — the Aether Library practice project.",
   "type": "module",
   "scripts": {
     "start": "node server.js",

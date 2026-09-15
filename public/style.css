@@ -83,10 +83,18 @@ button:hover {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
   font-size: 19px;
   font-weight: 750;
   letter-spacing: -0.5px;
   white-space: nowrap;
+}
+
+.brand-mark {
+  height: 30px;
+  width: auto;
+  margin-right: 8px;
 }
 
 .brand span {

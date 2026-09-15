@@ -1,11 +1,11 @@
-# AetherBot Library
+# Aether Library
 
 A solo practice repository for the AetherLink Worldline Wave 2 classroom
 (Teaching Days 1-2). This is a safe repository, not a toy prompt: a genuinely
 small, real, runnable project with clean git status and no real data or
 secrets, that you explore, change, test, and review with Claude Code.
 
-The practical project you build here is the **AetherBot Library** — a small
+The practical project you build here is the **Aether Library** — a small
 AI knowledge library that grows across the two teaching days: participant
 profiles, an AI glossary, enriched concept cards, and a learning game.
 

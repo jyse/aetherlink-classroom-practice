@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Small local MCP server for the AetherBot Library practice repo.
+// Small local MCP server for the Aether Library practice repo.
 //
 // This is a hand-rolled MCP server — NOT built on @modelcontextprotocol/sdk
 // — implementing just the slice of the MCP spec these two tools need

@@ -1,4 +1,4 @@
-# AetherBot Library
+# Aether Library
 
 ## Purpose
 
@@ -6,7 +6,7 @@ This is a solo practice repository for the AetherLink classroom (Teaching Days 1
 It is a small, self-contained stand-in for the AetherLink Academy: a place to
 practise exploring a project, making a plan, changing it, testing the result, and
 having a human review the evidence — all with Claude Code. The practical project
-built here is called the AetherBot Library.
+built here is called the Aether Library.
 
 There is no database, no authentication, and no shared or real-time state. Each
 participant works in their own local copy.
