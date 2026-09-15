@@ -27,9 +27,6 @@ participant works in their own local copy.
   Back game's single-slot round state (git-ignored; regenerated each round).
 - `data/fixtures/` — example glossary entries (one complete set, one
   deliberately incomplete) used to exercise `npm run validate`.
-- `data/mission.md` — the source the local MCP server's `get_mission` tool reads.
-- `mcp-server.mjs` — a local MCP server (stdio) exposing `get_mission` and
-  `search_knowledge`.
 - `scripts/validate.js` — basic shape validation for the JSON data files.
 - `checklist.md` — the class's own criteria for a good "explain this term
   back" answer, read by the `term-checker` skill.

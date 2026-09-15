@@ -25,13 +25,13 @@
     "definition": "A system that can observe its environment, decide on an action, use tools to act, check the result, and repeat or stop, rather than only returning a single generated answer.",
     "example": "Claude Code reading a file, forming a plan, editing code, running a test, and reporting the result is acting as an agent; a chat window that only replies with text is not.",
     "commonMisconception": "Using an agentic tool like Claude Code means you have personally built an agent. Using Claude Code means working with an existing agentic tool; designing your own trigger, tools, and checks is a separate, later step (see Assignment 10).",
-    "relevance": "Distinguishes 'using Claude Code' from 'designing an agent workflow' — the difference the four levels on Day 2 (Ask / Use / Customise / Design) are built around."
+    "relevance": "Distinguishes 'using Claude Code' from 'designing an agent workflow' \u2014 the difference the four levels on Day 2 (Ask / Use / Customise / Design) are built around."
   },
   {
     "term": "Tool call",
-    "definition": "A request an AI system makes to run a specific, defined operation — such as reading a file, running a command, or querying an external system — and receive a real result back before continuing.",
+    "definition": "A request an AI system makes to run a specific, defined operation \u2014 such as reading a file, running a command, or querying an external system \u2014 and receive a real result back before continuing.",
     "example": "Claude Code calling a file-read tool to open package.json before answering a question about this project's available commands.",
     "commonMisconception": "A tool call always means something was changed. Many tool calls (reading a file, searching text, listing a directory) are read-only observations, not actions with side effects.",
-    "relevance": "MCP (Assignment 9) is a standard way to expose tool calls like get_mission and search_knowledge to Claude Code in a controlled, explain-only way."
+    "relevance": "MCP (Assignment 10) is a standard way to expose tool calls to Claude Code in a controlled, read-only way \u2014 for example, retrieving one authorised Jira ticket, GitLab issue, or Confluence page from Worldline's real systems."
   }
 ]

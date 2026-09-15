@@ -15,10 +15,11 @@ Aether Library is the hands-on practice project for the AetherLink × Worldline 
 | Frontend | Static HTML/CSS/vanilla JS, no framework | Zero build tooling; a participant can read the whole client in one sitting |
 | Data | Flat JSON files in `data/` | No database — matches a solo, single-machine, disposable practice environment |
 | State (the game) | Two files, single slot each | `data/latest-submission.json` / `data/latest-feedback.json` — no history, resets each round (by design, not a limitation) |
-| MCP | Hand-rolled, zero dependencies | `mcp-server.mjs` implements just `initialize`/`tools/list`/`tools/call` directly over stdio JSON-RPC — no `@modelcontextprotocol/sdk`, no `zod`. `npm install` needs no internet access at all, which matters on a locked-down corporate network. |
 | Auth | None | Intentional — no accounts, no secrets, nothing to compromise |
 
-**Dependencies: zero.** `package.json`'s `dependencies` is an empty object. This was a deliberate late-stage change (originally used the official MCP SDK + zod) specifically to remove the assumption that a participant's machine can reach the public npm registry.
+**Dependencies: zero.** `package.json`'s `dependencies` is an empty object, so `npm install` needs no internet access at all — matters on a locked-down corporate network.
+
+**No MCP anywhere in this repo, on purpose.** An earlier draft had a small local MCP server here (used by an earlier version of Assignment 9). The curriculum was revised and nothing in the final version ever calls it — Slide 70 says explicitly "the repository itself does not require MCP" — so it was removed rather than left as unexplained clutter that Claude Code would still prompt participants to trust on first run. The curriculum's real MCP work (Part 5, Assignment 10) connects to Worldline's actual Jira/GitLab/Confluence systems, configured separately, outside this repo.
 
 ## 3. Data model
 
@@ -118,7 +119,7 @@ Five explicit steps, each human-triggered on purpose (no auto-polling anywhere i
 
 1. Participant reads the shown term, writes an explanation, clicks **Submit**.
 2. The participant tells their *own* Claude Code session (already open, already authenticated, in the same repo) to check it.
-3. Claude Code reads `data/latest-submission.json` and `checklist.md` as plain local files — normal file-read, not a tool call, not MCP — applies the `term-checker` skill, and writes `data/latest-feedback.json`.
+3. Claude Code reads `data/latest-submission.json` and `checklist.md` as plain local files — normal file-read, not MCP — applies the `term-checker` skill, and writes `data/latest-feedback.json`.
 4. The participant clicks **Check feedback**. Before that file exists, the panel explicitly says it's waiting for step 2 rather than looking broken or silently empty.
 5. **Reveal** (independent of the above) shows the approved concept card for the current term at any time, for self-review.
 
@@ -133,16 +134,7 @@ Two skills live under `.claude/skills/`, deliberately at different completion st
 
 Repo-root, plain markdown, editable by the class. Seeded with a reasonable starting checklist for what a good "explain this term back" answer should contain (central meaning, essential points, an example, no incorrect claims, no missing information, recommended resources). This is the artifact participants actually own and refine together — the whole point of separating it from the skill file is that changing what "good" means doesn't require touching code.
 
-## 9. MCP server (`mcp-server.mjs`)
-
-Hand-rolled, stdio transport, two read-only tools (explain-only, per Assignment 9 — "do not submit or change anything" through this connection):
-
-- **`get_mission`** — returns `data/mission.md`, optionally scoped to one day via the `CLASSROOM_DAY` env var.
-- **`search_knowledge`** — case-insensitive search across `data/glossary.json` (term/definition/example); empty query returns everything.
-
-No write tools are exposed. `.mcp.json` at the repo root auto-configures Claude Code to connect (`node mcp-server.mjs`) with zero manual setup.
-
-## 10. Validation
+## 9. Validation
 
 ```bash
 npm run validate            # checks profiles/glossary/concept-cards.json shape
@@ -151,28 +143,27 @@ npm run validate:fixtures   # demonstrates the validator on a known-good and a k
 
 `scripts/validate.js` checks required fields are present and non-empty, required lists are non-empty, and `resources` entries are shaped correctly. Exits non-zero on failure with the specific problem named.
 
-## 11. Reset
+## 10. Reset
 
 ```bash
 npm run reset   # git checkout -- .
 ```
 Restores every tracked file to the last commit. Deliberately does **not** touch untracked files (like a participant's own `notes/day1-learning-note.md`) or the git-ignored round-state files (`data/latest-submission.json`, `data/latest-feedback.json`) — those are cleared by hand if a fully clean game-state is wanted.
 
-## 12. Security / scope boundaries
+## 11. Security / scope boundaries
 
 - No authentication, no secrets, no real Worldline data or systems anywhere in this repo.
 - No database — nothing to persist beyond the current git-ignored round state.
 - No outbound network calls anywhere in the app's own code (the only external references at all are two documentation links inside the seeded example concept card, and Claude Code's own normal operation, which is outside this app's code).
 - `CLAUDE.md` explicitly scopes what Claude Code may change (profile/glossary/concept-card entries) and what it may not (auth, secrets, deployment — none of which exist here, so any request touching them should be treated as a signal to stop and ask, not a workaround).
 
-## 13. Verification performed
+## 12. Verification performed
 
 - Full round trip tested with real Claude Code (not simulated): submit → `claude -p "Check my latest submission using the term-checker skill."` → correct, specific feedback written and displayed in-app.
-- Both MCP tools tested through a real Claude Code MCP handshake (`initialize` → `tools/list` → `tools/call`), not just unit-tested in isolation.
 - `npm run validate` passes on real data; `npm run validate:fixtures` correctly passes the complete fixture and fails the incomplete one with the right missing field named.
 - Both themes (dark/light) visually confirmed on all four pages, including the transparent mascot images.
 - `npm install` confirmed to require no network access (empty `dependencies`).
 
-## 14. Known open decision
+## 13. Known open decision
 
 The curriculum's own Slide 63 ("Game starter state") describes the game as shipping with visual design and an empty feedback area, expecting **participants to complete the behaviour** with Claude Code (an Assignment 9 build task) — the same pattern as `create-concept-card`. As currently shipped, the game is **fully built and working**, matching the "build the complete demo first" sequencing decision made during development. Deriving an intentionally-incomplete **starter** version of the game from this working reference (so Assignment 9 has something left to build) is a deliberate next step, not yet done.

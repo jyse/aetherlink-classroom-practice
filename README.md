@@ -21,11 +21,9 @@ npm start
 ```
 
 **`npm install` needs no internet access.** This repo has zero npm
-dependencies — the MCP server (`mcp-server.mjs`) is a small hand-rolled
-implementation of the slice of the MCP spec it needs, not built on
-`@modelcontextprotocol/sdk`. That matters on a locked-down corporate
-network: cloning/copying this folder and running `npm install && npm start`
-works completely offline, with no package registry required at any point.
+dependencies. That matters on a locked-down corporate network:
+cloning/copying this folder and running `npm install && npm start` works
+completely offline, with no package registry required at any point.
 
 Then open http://localhost:3000. You'll see four pages reachable from the
 sidebar:
@@ -161,9 +159,6 @@ Two skills live under `.claude/skills/`:
   target). Seeded with one complete example.
 - `data/fixtures/` — one complete and one deliberately incomplete glossary
   fixture, for exercising `npm run validate`.
-- `data/mission.md` — source for the MCP server's `get_mission` tool.
-- `mcp-server.mjs` — a local MCP server (Assignment 9 in the original
-  numbering — see `.mcp.json` and the section below).
 - `checklist.md` — editable, class-authored explanation criteria.
 - `scripts/validate.js` — the `npm run validate` implementation.
 - `.claude/skills/create-concept-card/SKILL.md` — Skill #1 (intentionally
@@ -175,49 +170,16 @@ Two skills live under `.claude/skills/`:
 - `CLAUDE.md` — project instructions for Claude Code. You'll review and
   improve this yourself in Assignment 5.
 
-## Connecting Claude Code to the local MCP server
+## About MCP and this repo
 
-This repo ships with a project-scoped `.mcp.json` pointing at the bundled MCP
-server, so opening Claude Code in this folder should offer the connection
-automatically:
-
-```json
-{
-  "mcpServers": {
-    "academy-practice": {
-      "command": "node",
-      "args": ["mcp-server.mjs"]
-    }
-  }
-}
-```
-
-To check it's connected, run `/mcp` inside a Claude Code session started in
-this project. It exposes exactly two tools, both read-only:
-
-- `get_mission` — returns today's mission as markdown (reads `data/mission.md`;
-  set `CLASSROOM_DAY=1` or `CLASSROOM_DAY=2` in your shell to scope it to one
-  day).
-- `search_knowledge` — takes `{ query: string }` and searches `data/glossary.json`
-  case-insensitively across `term`, `definition`, and `example`; an empty
-  query returns every term.
-
-Use this connection to explain what you find. Do not submit or change
-anything through it — there is nothing to submit here anyway; these two
-tools have no write path. (This local server is separate from, and much
-simpler than, the real Jira/GitLab/Confluence connections covered in Part 5
-of the curriculum — those are configured outside this repo, against real
-Worldline systems.)
-
-You can also run the MCP server directly to sanity-check it outside Claude
-Code:
-
-```bash
-npm run mcp
-```
-
-It talks stdio JSON-RPC, so running it directly won't print anything visible
-on its own — that's expected.
+This repo does **not** use MCP anywhere — deliberately. An earlier draft had
+a small local MCP server here, but nothing in the final curriculum ever
+calls it (Slide 70 says so explicitly: "the repository itself does not
+require MCP"), so it was removed rather than left as unexplained clutter
+that Claude Code would still prompt you to trust on first run. The
+curriculum's actual MCP work (Part 5, Assignment 10) connects to Worldline's
+real Jira/GitLab/Confluence systems — that's configured separately, outside
+this repo, against real Worldline access, not anything in this folder.
 
 ## Notes for the facilitator
 

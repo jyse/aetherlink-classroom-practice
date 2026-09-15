@@ -6,7 +6,6 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "mcp": "node mcp-server.mjs",
     "validate": "node scripts/validate.js",
     "validate:fixtures": "node scripts/validate.js --fixtures",
     "reset": "git checkout -- ."
