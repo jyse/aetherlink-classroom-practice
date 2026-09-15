@@ -1,13 +1,10 @@
 [
   {
     "term": "Fine-tuning",
-    "definition": "Further training a pre-trained model on a narrower dataset to specialise its behaviour.",
-    "example": "",
-    "commonMisconception": "Fine-tuning is the same as prompting. It isn't — fine-tuning changes the model's weights; prompting only changes what's in the context window for one interaction.",
-    "relevance": "Comes up when discussing why this course uses prompting and skills, not model training, to customise Claude's behaviour."
+    "definition": "Further training a pre-trained model on a narrower dataset to specialise its behaviour."
   },
   {
-    "term": "Temperature",
-    "definition": "A setting that influences how much variation appears in a model's generated responses."
+    "term": "System prompt",
+    "definition": ""
   }
 ]

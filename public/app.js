@@ -108,18 +108,6 @@ function glossaryCard(t) {
           <dt>Definition</dt>
           <dd>${escapeHtml(t.definition || "")}</dd>
         </div>
-        <div>
-          <dt>Example</dt>
-          <dd>${escapeHtml(t.example || "")}</dd>
-        </div>
-        <div>
-          <dt>Common misconception</dt>
-          <dd>${escapeHtml(t.commonMisconception || "")}</dd>
-        </div>
-        <div>
-          <dt>Relevance</dt>
-          <dd>${escapeHtml(t.relevance || "")}</dd>
-        </div>
       </dl>
     </article>
   `;
@@ -346,9 +334,6 @@ function revealConceptCard() {
     )}" — showing the basic glossary entry it would be built from instead.</p>
     <dl>
       <div><dt>Definition</dt><dd>${escapeHtml(currentGameTerm.definition || "")}</dd></div>
-      <div><dt>Example</dt><dd>${escapeHtml(currentGameTerm.example || "")}</dd></div>
-      <div><dt>Common misconception</dt><dd>${escapeHtml(currentGameTerm.commonMisconception || "")}</dd></div>
-      <div><dt>Relevance</dt><dd>${escapeHtml(currentGameTerm.relevance || "")}</dd></div>
     </dl>
   `;
 }

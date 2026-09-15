@@ -40,13 +40,10 @@ Assignment 2's target — participants add their own entry.
 ```json
 {
   "term": "string",
-  "definition": "string",
-  "example": "string",
-  "commonMisconception": "string",
-  "relevance": "string"
+  "definition": "string"
 }
 ```
-Seeded with 5 real terms (context window, hallucination, prompt, agent, tool call). Assignment 3's target — participants add one more.
+Deliberately minimal — just a term and a plain-language definition. The richer detail (example, misconception, resources, etc.) belongs to a concept card, built by *enriching* a glossary term rather than duplicated at the glossary level. Seeded with 25 real terms pulled directly from the slide deck's own vocabulary across both days. Assignment 3's target — participants add one more.
 
 ### `data/concept-cards.json`
 ```json

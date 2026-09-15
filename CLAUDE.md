@@ -41,8 +41,10 @@ participant works in their own local copy.
 A profile entry has: `name`, `role`, `team`, `experience`, `learningGoal`,
 `workflowToImprove`.
 
-A glossary entry has: `term`, `definition`, `example`, `commonMisconception`,
-`relevance`.
+A glossary entry has just `term` and `definition` — deliberately minimal. The
+example/misconception/related-concepts/resources detail belongs to a concept
+card, built by *enriching* a glossary term, not duplicated at the glossary
+level.
 
 A concept card entry has: `term`, `explanation`, `example`,
 `commonMisunderstanding`, `essentialPoints` (list), `relatedConcepts` (list),

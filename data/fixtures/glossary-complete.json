@@ -1,16 +1,10 @@
 [
   {
-    "term": "Token",
-    "definition": "The basic unit of text a language model processes — roughly a word piece, not always a whole word.",
-    "example": "The word 'unbelievable' might be split into a few tokens rather than counted as one, depending on the model's tokenizer.",
-    "commonMisconception": "A token is always one character or one word. In practice it varies by language, model, and word.",
-    "relevance": "Context windows and API usage are both measured in tokens, not words or characters."
+    "term": "Embedding",
+    "definition": "A numeric representation of text that places similar meanings near each other in a coordinate space, used to compare and retrieve related content."
   },
   {
-    "term": "System prompt",
-    "definition": "Standing instructions given to a model before the conversation starts, shaping its behaviour for every turn that follows.",
-    "example": "Claude Code's own default behaviours (like asking before risky actions) come from instructions set outside the visible chat, similar in spirit to a system prompt.",
-    "commonMisconception": "A system prompt guarantees the model will never deviate from it. It strongly influences behaviour but is not an unbreakable rule enforced outside the model itself.",
-    "relevance": "Distinguishes 'instructions the model was given' from 'permissions the tool actually enforces' — a distinction this course keeps returning to."
+    "term": "Fine-tuning",
+    "definition": "Further training a pre-trained model on a narrower dataset to specialise its behaviour, changing the model's weights rather than just its input."
   }
 ]

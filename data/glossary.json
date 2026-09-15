@@ -1,37 +1,102 @@
 [
   {
     "term": "Context window",
-    "definition": "The amount of text (measured in tokens) a model can consider at once, including your prompt, conversation history, and any files or tool output provided to it.",
-    "example": "If a project's coding conventions live in CLAUDE.md, Claude can only follow them consistently if that file fits inside the current context window alongside your actual request.",
-    "commonMisconception": "A bigger context window always produces better answers. In practice, relevant and well-organised context beats a large volume of loosely related text.",
-    "relevance": "Explains why this programme keeps CLAUDE.md and glossary entries short and specific rather than dumping every document into the project."
+    "definition": "The amount of text (measured in tokens) a model can consider at once, including your prompt, conversation history, and any files or tool output provided to it."
   },
   {
     "term": "Hallucination",
-    "definition": "A confident-sounding output that is factually wrong or unsupported by the available context, produced because the model generates a plausible continuation rather than a verified fact.",
-    "example": "Claude describing a function or config option that does not exist anywhere in the actual codebase, because it 'looks like' something a project of this shape would have.",
-    "commonMisconception": "Hallucination only happens with weak or old models. Every model can hallucinate, especially when context is missing, ambiguous, or the question sits outside what any file in the project actually shows.",
-    "relevance": "The reason this programme insists on evidence over confidence: a plan, a change, or an answer is a proposal until it has been checked against the real project."
+    "definition": "A confident-sounding output that is factually wrong or unsupported by the available context, produced because the model generates a plausible continuation rather than a verified fact."
   },
   {
     "term": "Prompt",
-    "definition": "The instruction or question given to a model, including any surrounding context, that shapes the response it generates.",
-    "example": "\"Explore this project. Explain what it does and how it is structured. Do not change anything.\" is a prompt that asks for read-only exploration.",
-    "commonMisconception": "A good prompt is a clever trick or magic phrase. In practice, a good prompt is simply clear about the goal, the constraints, and what evidence is expected back.",
-    "relevance": "Day 1's very first live demo and every assignment in this repository starts from a deliberately written prompt, not an open-ended request."
+    "definition": "The instruction or question given to a model, including any surrounding context, that shapes the response it generates."
   },
   {
     "term": "Agent",
-    "definition": "A system that can observe its environment, decide on an action, use tools to act, check the result, and repeat or stop, rather than only returning a single generated answer.",
-    "example": "Claude Code reading a file, forming a plan, editing code, running a test, and reporting the result is acting as an agent; a chat window that only replies with text is not.",
-    "commonMisconception": "Using an agentic tool like Claude Code means you have personally built an agent. Using Claude Code means working with an existing agentic tool; designing your own trigger, tools, and checks is a separate, later step (see Assignment 10).",
-    "relevance": "Distinguishes 'using Claude Code' from 'designing an agent workflow' \u2014 the difference the four levels on Day 2 (Ask / Use / Customise / Design) are built around."
+    "definition": "A system that can observe its environment, decide on an action, use tools to act, check the result, and repeat or stop, rather than only returning a single generated answer."
   },
   {
     "term": "Tool call",
-    "definition": "A request an AI system makes to run a specific, defined operation \u2014 such as reading a file, running a command, or querying an external system \u2014 and receive a real result back before continuing.",
-    "example": "Claude Code calling a file-read tool to open package.json before answering a question about this project's available commands.",
-    "commonMisconception": "A tool call always means something was changed. Many tool calls (reading a file, searching text, listing a directory) are read-only observations, not actions with side effects.",
-    "relevance": "MCP (Assignment 10) is a standard way to expose tool calls to Claude Code in a controlled, read-only way \u2014 for example, retrieving one authorised Jira ticket, GitLab issue, or Confluence page from Worldline's real systems."
+    "definition": "A request an AI system makes to run a specific, defined operation — such as reading a file, running a command, or querying an external system — and receive a real result back before continuing."
+  },
+  {
+    "term": "Artificial intelligence",
+    "definition": "The broad field of building systems that perform tasks associated with human intelligence, such as recognising patterns, making predictions, generating content, and selecting actions."
+  },
+  {
+    "term": "Machine learning",
+    "definition": "A branch of AI in which systems find patterns in data and improve at a task from that data, rather than following only fixed, hand-written rules."
+  },
+  {
+    "term": "Generative AI",
+    "definition": "AI systems that create new content — text, code, images, and more — rather than only classifying or predicting from existing data."
+  },
+  {
+    "term": "Large language model",
+    "definition": "A generative AI model trained on large amounts of text that generates a response from patterns learned during training and the context available in the current interaction. A plausible response still requires verification."
+  },
+  {
+    "term": "Token",
+    "definition": "The unit of text a model actually processes — often a word, part of a word, or punctuation mark. Context windows, cost, and speed are all measured in tokens, not characters or words directly."
+  },
+  {
+    "term": "Temperature",
+    "definition": "A setting that controls how much variation appears in a model's generated responses. Higher temperature means more varied output — it does not make an answer more truthful or more accurate."
+  },
+  {
+    "term": "Claude Code",
+    "definition": "Anthropic's agentic coding tool — unlike a chat interface, it works inside an actual project, can inspect and edit real files, run commands and tests, and check its own results, with permissions and human review controlling what it may do."
+  },
+  {
+    "term": "Claude chat",
+    "definition": "Claude's general conversational interface — works mainly through back-and-forth conversation, uses only the context you explicitly provide, and produces a response rather than acting inside a project."
+  },
+  {
+    "term": "Plan Mode",
+    "definition": "A Claude Code mode that investigates a task and prepares a plan before making any changes, so a human can review the approach before implementation begins."
+  },
+  {
+    "term": "Permissions",
+    "definition": "The rules that control which actions Claude Code may take without asking first — for example, reading a file versus writing it versus running a command. Permissions define the actual scope of impact a task can have, separately from what the instructions say Claude should do."
+  },
+  {
+    "term": "CLAUDE.md",
+    "definition": "A file that gives Claude Code persistent, project-specific instructions — purpose, structure, conventions, approved commands, boundaries — that apply across every session, not just the current conversation."
+  },
+  {
+    "term": "Skill",
+    "definition": "A packaged, reusable method for a recurring task, defining when it applies, what input it needs, its procedure, its output, and its boundaries. A skill does not start Claude Code or run on its own — it is applied when asked."
+  },
+  {
+    "term": "MCP",
+    "definition": "Short for Model Context Protocol — a standard way for AI applications to connect to approved external information and capabilities, such as a ticketing system or a wiki. Connecting to an MCP server does not by itself grant permission to act; it only makes the connection possible."
+  },
+  {
+    "term": "Agent loop",
+    "definition": "The repeating cycle an agent runs inside one bounded task: observe the current state, decide the next step, act, check the result, then repeat or stop."
+  },
+  {
+    "term": "SDLC",
+    "definition": "Short for Software Development Lifecycle — the recurring stages a team's work moves through (plan, design, build, test, deploy, maintain) that a single AI-assisted task sits inside, rather than replaces."
+  },
+  {
+    "term": "Human review",
+    "definition": "The point in a workflow where a person judges whether AI-produced work matches the intent, whether the evidence is sufficient, and whether to accept, revise, or reject it — part of the working method itself, not an optional final step."
+  },
+  {
+    "term": "Bounded autonomy",
+    "definition": "Letting Claude Code take several steps toward one goal on its own, within explicit boundaries that define what it may read, what it may change, which checks it must run, and when it must stop for a human decision."
+  },
+  {
+    "term": "Concept card",
+    "definition": "An enriched, complete reference for one term — explanation, example, common misunderstanding, essential points, related concepts, and resources — built by expanding a short glossary definition."
+  },
+  {
+    "term": "Evidence",
+    "definition": "Concrete proof that a claim is true — a diff, a test result, a command's actual output, a cited source — as opposed to a confident-sounding but unverified statement."
+  },
+  {
+    "term": "OPEN",
+    "definition": "The convention used throughout this course for marking something as unresolved or unverified rather than guessing or quietly assuming an answer. Anything marked OPEN needs a human decision or further checking before it is treated as settled."
   }
 ]

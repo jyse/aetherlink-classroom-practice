@@ -38,7 +38,7 @@ const SCHEMAS = {
     requiredStrings: ["name", "role", "experience", "learningGoal", "workflowToImprove"],
   },
   glossary: {
-    requiredStrings: ["term", "definition", "example", "commonMisconception", "relevance"],
+    requiredStrings: ["term", "definition"],
   },
   "concept-card": {
     requiredStrings: ["term", "explanation", "example", "commonMisunderstanding"],
