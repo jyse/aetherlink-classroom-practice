@@ -137,42 +137,45 @@ async function loadLibrary() {
   }
 }
 
-function conceptCardFieldsHtml(c) {
+function fieldSection(label, bodyHtml, accent) {
   return `
-    <div>
-      <dt>Explanation</dt>
-      <dd>${escapeHtml(c.explanation || "")}</dd>
-    </div>
-    <div>
-      <dt>Example</dt>
-      <dd>${escapeHtml(c.example || "")}</dd>
-    </div>
-    <div>
-      <dt>Common misunderstanding</dt>
-      <dd>${escapeHtml(c.commonMisunderstanding || "")}</dd>
-    </div>
-    <div>
-      <dt>Essential points</dt>
-      <dd><ul>${(c.essentialPoints || []).map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul></dd>
-    </div>
-    <div>
-      <dt>Related concepts</dt>
-      <dd>${(c.relatedConcepts || []).map(escapeHtml).join(", ")}</dd>
-    </div>
-    <div>
-      <dt>Resources</dt>
-      <dd><ul>${(c.resources || [])
-        .map((r) => `<li><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a></li>`)
-        .join("")}</ul></dd>
-    </div>
+    <details class="field-row field-row--${accent}">
+      <summary>${escapeHtml(label)}</summary>
+      <div class="field-body">${bodyHtml}</div>
+    </details>
   `;
+}
+
+function conceptCardFieldsHtml(c) {
+  return [
+    fieldSection("Explanation", `<p>${escapeHtml(c.explanation || "")}</p>`, "cyan"),
+    fieldSection("Example", `<p>${escapeHtml(c.example || "")}</p>`, "violet"),
+    fieldSection("Common misunderstanding", `<p>${escapeHtml(c.commonMisunderstanding || "")}</p>`, "cyan"),
+    fieldSection(
+      "Essential points",
+      `<ul>${(c.essentialPoints || []).map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`,
+      "violet"
+    ),
+    fieldSection(
+      "Related concepts",
+      `<div class="tag-list">${(c.relatedConcepts || []).map((r) => `<span class="chip">${escapeHtml(r)}</span>`).join("")}</div>`,
+      "cyan"
+    ),
+    fieldSection(
+      "Resources",
+      `<ul>${(c.resources || [])
+        .map((r) => `<li><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a></li>`)
+        .join("")}</ul>`,
+      "violet"
+    ),
+  ].join("");
 }
 
 function conceptCardMarkup(c) {
   return `
     <article class="card concept-card">
       <span class="chip">${escapeHtml(c.term)}</span>
-      <dl>${conceptCardFieldsHtml(c)}</dl>
+      <div class="field-accordion">${conceptCardFieldsHtml(c)}</div>
     </article>
   `;
 }
@@ -317,7 +320,7 @@ function revealConceptCard() {
 
   const card = findConceptCard(currentGameTerm.term);
   if (card) {
-    body.innerHTML = `<dl>${conceptCardFieldsHtml(card)}</dl>`;
+    body.innerHTML = `<div class="field-accordion">${conceptCardFieldsHtml(card)}</div>`;
     return;
   }
 
