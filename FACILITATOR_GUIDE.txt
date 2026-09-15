@@ -1,0 +1,356 @@
+========================================================================
+AETHER LIBRARY — FACILITATOR GUIDE
+All 10 assignments, in order, with the exact prompt to give participants
+========================================================================
+
+How to use this file:
+- Each assignment below has a "PROMPT TO GIVE PARTICIPANTS" block — read
+  it aloud, show it on screen, or paste it directly into the slide deck's
+  presenter view (it's already there — press S in the deck, or click
+  "Example prompt" in the toolbar to copy it with one click).
+- [TERM] in a prompt means the participant fills in their own chosen term
+  before using it.
+- "WATCH FOR" is what to circulate and look out for while the timer runs.
+- Every assignment is solo — no pairing, no mob programming. That starts
+  in the five support days, not here.
+
+========================================================================
+DAY 1
+========================================================================
+
+------------------------------------------------------------------------
+ASSIGNMENT 1: Repository explorer                            25 minutes
+------------------------------------------------------------------------
+GOAL
+Use Claude Code to understand the project without changing it.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Explore this repository without changing anything.
+
+Explain:
+- what the application does;
+- how it is structured;
+- where profiles and glossary terms live;
+- how to start it;
+- how to validate a change;
+- which files require extra care.
+
+Support your explanation with evidence from the repository. Mark
+anything you cannot verify as OPEN.
+------------------------------------------------------------------------
+
+DELIVER: application purpose, project structure, relevant files, start
+and validation commands, protected areas, OPEN questions.
+
+EXPECTED RESULT
+An evidence-based repository map. No code changed, and unknowns are
+marked OPEN rather than guessed.
+
+WATCH FOR
+First solo assignment of the day — expect basic terminal questions in
+the first five minutes, that's normal. Start the timer visibly. At 5
+minutes remaining, give a verbal warning. If someone finishes early,
+have them dig into one OPEN question rather than move ahead.
+
+------------------------------------------------------------------------
+ASSIGNMENT 2: Participant profile                             30 minutes
+------------------------------------------------------------------------
+GOAL
+Add your profile to the Aether Library.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Inspect the existing profile structure and propose a participant
+profile for me.
+
+First show:
+- the proposed content;
+- the files you would change;
+- how you will validate the result.
+
+Do not edit anything until I approve the plan. Do not include
+confidential or unnecessary personal information.
+------------------------------------------------------------------------
+
+INCLUDE: name, role, relevant experience, learning goal, one task you'd
+like AI to improve.
+
+EXPECTED RESULT
+Your profile appears in the application and passes validation, with the
+plan approved before any file changed.
+
+WATCH FOR
+Participants who skip straight to editing the file — redirect them back
+to explore/plan without being heavy-handed, this is the first time
+they'll feel the method in their own hands. Remind them explicitly: no
+confidential or unnecessary personal information.
+
+------------------------------------------------------------------------
+ASSIGNMENT 3: Glossary contribution                            30 minutes
+------------------------------------------------------------------------
+GOAL
+Choose one AI term and add it to the glossary.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Help me add the term [TERM] to the glossary.
+
+Write for product managers and developers who are new to agentic AI.
+Follow the existing glossary structure. Show the draft before editing
+the repository. Do not add claims that we cannot verify.
+------------------------------------------------------------------------
+
+ADD: a short, plain-language definition. (The glossary is deliberately
+just term + definition — nothing else.)
+
+EXPECTED RESULT
+A new basic glossary entry appears in the application, reviewed as a
+draft before it was added.
+
+WATCH FOR
+The verification step is the whole point of this assignment — if
+someone's first draft goes straight in unchecked, stop and ask them to
+verify it against today's material first.
+
+------------------------------------------------------------------------
+ASSIGNMENT 4: Enriched concept card                            45 minutes
+------------------------------------------------------------------------
+GOAL
+Turn one glossary term into a complete concept card.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Turn the glossary entry [TERM] into a complete concept card.
+
+First inspect the existing data structure and application design.
+Propose the card content and the smallest implementation plan. Verify
+the factual explanation and include reliable resources. Wait for my
+approval before changing files. Run the relevant checks afterwards.
+------------------------------------------------------------------------
+
+INCLUDE: plain-language explanation, practical example, common
+misunderstanding, essential points, related concepts, reliable
+resources.
+
+EXPECTED RESULT
+One enriched concept card appears in the Aether Library, verified and
+checked.
+
+WATCH FOR
+Longest assignment of the morning — the room will feel the jump from a
+basic glossary entry to a fully sourced card. Circulate and coach on
+"verify the factual explanation" specifically — that's the step people
+are tempted to skip under time pressure.
+
+========================================================================
+DAY 2
+========================================================================
+
+------------------------------------------------------------------------
+ASSIGNMENT 5: Project instructions                             30 minutes
+------------------------------------------------------------------------
+GOAL
+Review and improve the repository's CLAUDE.md.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Review this repository and its CLAUDE.md.
+
+Propose the minimum persistent instructions Claude needs to work safely
+and consistently here. Cover project purpose, relevant structure,
+conventions, approved commands, privacy, validation and human approval.
+Do not add temporary assignment notes or personal preferences. Show the
+proposed changes before editing.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+A CLAUDE.md that a stranger's Claude Code session could rely on without
+you explaining anything out loud.
+
+WATCH FOR
+Participants pasting today's entire to-do list into CLAUDE.md — redirect
+them: it isn't a prompt landfill or a temporary notes file.
+
+------------------------------------------------------------------------
+ASSIGNMENT 6: Create a second card                             25 minutes
+------------------------------------------------------------------------
+GOAL
+Create a second concept card with an ordinary prompt. Do not use a
+skill yet.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Turn the glossary entry [TERM] into a complete concept card.
+
+Use the same requirements and validation method as yesterday's approved
+card. Show the draft and implementation plan before changing anything.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+A second concept card created through another one-off prompt — plus a
+clear sense of what had to be repeated.
+
+WATCH FOR
+Important: this must stay a normal, ad-hoc prompt — not a skill. The
+inconsistency this creates between people's results is exactly what
+motivates building a skill next. Don't let anyone jump ahead to
+Assignment 7 yet.
+
+------------------------------------------------------------------------
+ASSIGNMENT 7: Teach Claude the method                          45 minutes
+------------------------------------------------------------------------
+GOAL
+Improve the Create Concept Card skill (it ships intentionally
+incomplete).
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Inspect the existing create-concept-card skill and the two approved
+concept cards.
+
+Propose improvements that make the method reliable and reusable. The
+skill must use sources, preserve uncertainty as OPEN, follow the
+existing card structure, validate its output and stop for human
+approval. Show the revised skill before editing it.
+------------------------------------------------------------------------
+
+THE SKILL MUST COVER: required source information, card structure,
+factual verification, missing information, validation, human approval.
+
+EXPECTED RESULT
+A complete create-concept-card skill, tested against the two approved
+cards.
+
+WATCH FOR
+This is the room's first time authoring their own skill — expect it to
+take longer than the timer implies. Your job here is coaching, not
+demoing a pre-built answer; circulate and check each skill still stops
+for human approval rather than finishing unattended.
+
+------------------------------------------------------------------------
+ASSIGNMENT 8: Build the card library                           45 minutes
+------------------------------------------------------------------------
+GOAL
+Use one instruction to process every approved glossary term.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Use the Create Concept Card skill to process every approved glossary
+term.
+
+For each term:
+1. Read the glossary entry.
+2. Check whether the available information and sources are sufficient.
+3. Create the concept card.
+4. Validate the required fields.
+5. Record READY, REVISE or OPEN.
+6. Continue with the next term.
+
+Do not invent missing information. Do not commit anything. When all
+terms are processed, run the project checks and show me the complete
+report for human review.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+Draft concept cards for all suitable terms, plus a status report ready
+for human review.
+
+WATCH FOR
+Low infra-risk for you to prepare since participants build and run it
+themselves — your job is circulating and checking each run actually
+stops to report rather than committing unattended. Watch especially for
+terms it should have marked OPEN instead of guessing.
+
+------------------------------------------------------------------------
+ASSIGNMENT 9: Learning game                                    60 minutes
+------------------------------------------------------------------------
+GOAL
+Complete the "Explain It Back" game — including real AI feedback from
+the participant's own Claude Code session. No API keys, no external
+model calls, no database, anywhere in this.
+
+PROMPT TO GIVE PARTICIPANTS (part 1 — build the game)
+------------------------------------------------------------------------
+Explore the existing game page and concept-card data.
+
+Propose the smallest implementation that lets a participant read a
+term, enter an explanation, reveal the approved concept card, reflect
+on missing elements and continue to the next term. Reuse the existing
+visual design. Do not add authentication, a database or external AI
+calls. Show the plan and test cases before implementation.
+
+Then wire up real AI feedback using Claude Code itself — no API
+credentials required:
+- On Submit, POST the explanation to the local server, which writes it
+  to data/latest-submission.json (a single slot that resets each round
+  — no history needed).
+- Add a manual "Check feedback" button that GETs
+  data/latest-feedback.json and displays it. Do not auto-poll — every
+  step must stay human-triggered.
+------------------------------------------------------------------------
+
+PROMPT TO GIVE PARTICIPANTS (part 2 — actually check a submission)
+------------------------------------------------------------------------
+Check my latest submission using the term-checker skill.
+------------------------------------------------------------------------
+(This is said directly to Claude Code, in the terminal, once the game
+above is wired up and a participant has clicked Submit on the game
+page. Claude Code reads data/latest-submission.json and checklist.md,
+applies the term-checker skill, and writes data/latest-feedback.json —
+that's what makes the "Check feedback" button show something.)
+
+EXPECTED RESULT
+A working browser-based learning game where AI feedback comes from the
+participant's own authenticated Claude Code session — no API
+credentials, no external model calls, no database.
+
+WATCH FOR
+Longest single assignment of the two days — give it the full 60 minutes
+and don't rush the wrap-up. Two distinct halves: first the game UI,
+then the file-based AI feedback bridge. The thing to protect: no API
+keys, no external model calls, no database — feedback comes entirely
+from the participant's own already-authenticated Claude Code session
+reading and writing local files. Watch for people who build the UI and
+skip the term-checker invocation because time is short — prioritise
+getting every participant to say that second prompt at least once, even
+if the UI polish is incomplete.
+
+------------------------------------------------------------------------
+ASSIGNMENT 10: Connected context                               30 minutes
+------------------------------------------------------------------------
+GOAL
+Retrieve one authorised item from a real Worldline system, read-only.
+
+PROMPT TO GIVE PARTICIPANTS
+------------------------------------------------------------------------
+Use the approved connection to retrieve one authorised [Jira ticket /
+GitLab item / Confluence page].
+
+Use read-only actions. Explain:
+- what information was retrieved;
+- which source fields support your explanation;
+- what remains unclear;
+- which actions the connection could perform but you did not approve.
+
+Do not modify the external system.
+------------------------------------------------------------------------
+
+CHOOSE ONE: one Jira ticket, one GitLab issue or merge request, one
+Confluence page.
+
+EXPECTED RESULT
+No external changes. A sourced, plain-language explanation of one
+connected item, with unclear points marked OPEN.
+
+WATCH FOR
+Highest infra-risk moment of the two days — verify the MCP connection
+end-to-end yourself before class. Fallback: if a participant's
+connection fails, have them use the local fixture files instead and
+explain those — the teaching point (retrieve, explain, do not modify)
+survives without a live round-trip. Keep a captured example ready to
+show the room if several people need the fallback at once.
+
+========================================================================
+END OF ASSIGNMENTS
+========================================================================
