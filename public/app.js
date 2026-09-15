@@ -101,15 +101,8 @@ async function loadGlossary() {
 
 function glossaryCard(t) {
   return `
-    <article class="card glossary-term">
-      <span class="chip">${escapeHtml(t.term)}</span>
-      <dl>
-        <div>
-          <dt>Definition</dt>
-          <dd>${escapeHtml(t.definition || "")}</dd>
-        </div>
-      </dl>
-    </article>
+    <dt>${escapeHtml(t.term)}</dt>
+    <dd>${escapeHtml(t.definition || "")}</dd>
   `;
 }
 
