@@ -20,6 +20,13 @@ npm install
 npm start
 ```
 
+**`npm install` needs no internet access.** This repo has zero npm
+dependencies — the MCP server (`mcp-server.mjs`) is a small hand-rolled
+implementation of the slice of the MCP spec it needs, not built on
+`@modelcontextprotocol/sdk`. That matters on a locked-down corporate
+network: cloning/copying this folder and running `npm install && npm start`
+works completely offline, with no package registry required at any point.
+
 Then open http://localhost:3000. You'll see four pages reachable from the
 sidebar:
 
