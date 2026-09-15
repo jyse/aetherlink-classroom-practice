@@ -273,6 +273,237 @@ main {
   color: #e4aa5a;
 }
 
+.concept-card {
+  border-left: 2px solid var(--cyan);
+  padding-left: 14px;
+}
+
+.concept-card ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.concept-card a {
+  color: var(--cyan);
+}
+
+.page-heading-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.mascot {
+  display: block;
+}
+
+.mascot-header {
+  height: 88px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.mascot-inline {
+  height: 40px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.mascot-empty {
+  height: 96px;
+  width: auto;
+  margin: 0 auto 12px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 32px 0;
+}
+
+/* --- Explain It Back game ------------------------------------------- */
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.game-term-panel,
+.game-feedback-panel,
+.game-reveal-panel {
+  grid-column: span 2;
+}
+
+.game-term-panel {
+  padding: 18px 20px;
+}
+
+.game-term-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-answer-panel {
+  padding: 18px 20px;
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-answer-panel label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.game-answer-panel textarea {
+  width: 100%;
+  resize: vertical;
+  background: var(--input);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.game-answer-panel textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+
+.game-answer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.primary-button {
+  background: var(--cyan);
+  color: #06111e;
+  border-color: var(--cyan);
+  font-weight: 650;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
+  border-color: var(--cyan);
+}
+
+.ghost-button {
+  background: transparent;
+}
+
+.game-feedback-panel,
+.game-reveal-panel {
+  grid-column: span 1;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-reveal-body dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.game-reveal-body dt {
+  color: var(--cyan);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.game-reveal-body dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.game-reveal-body ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.waiting-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-rating {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.rating-strong-explanation {
+  background: rgba(105, 226, 242, 0.16);
+  color: var(--cyan);
+}
+
+.rating-partially-complete {
+  background: rgba(185, 154, 255, 0.16);
+  color: var(--violet);
+}
+
+.rating-review-this-concept {
+  background: rgba(228, 170, 90, 0.18);
+  color: #e4aa5a;
+}
+
+.rating-unable-to-evaluate {
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.feedback-list dt {
+  color: var(--cyan);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.feedback-list dd {
+  margin: 0;
+}
+
+.feedback-list ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.feedback-note {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
 @media (max-width: 800px) {
   .app {
     grid-template-columns: 1fr;
@@ -293,5 +524,16 @@ main {
   }
   main {
     padding: 20px 16px;
+  }
+  .game-feedback-panel,
+  .game-reveal-panel {
+    grid-column: span 2;
+  }
+  .page-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mascot-header {
+    height: 64px;
   }
 }

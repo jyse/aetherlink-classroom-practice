@@ -1,0 +1,25 @@
+[
+  {
+    "term": "Context window",
+    "explanation": "The context window is the total amount of text a model can pay attention to at once, measured in tokens. It includes your prompt, the conversation so far, and any file or tool content that has been added to it. It is not long-term memory — once a session ends, or once the window fills up, older content gets dropped or summarized rather than remembered.",
+    "example": "This repository's CLAUDE.md, the glossary, and a handful of source files all fit comfortably inside a single Claude Code session's context window. A much larger, unfamiliar codebase might not — Claude would need to read selectively (specific files, specific sections) rather than assume everything is 'in view' at once.",
+    "commonMisunderstanding": "A bigger context window always produces a better answer. In practice, relevant and well-organized context beats a large volume of loosely related text — irrelevant material can distract the model from the actual task, the same way it would distract a person skimming a huge document for one answer.",
+    "essentialPoints": [
+      "Measured in tokens, not characters or words directly.",
+      "Covers the prompt, conversation history, and any file or tool output currently included.",
+      "Filling the window does not mean unlimited memory — content can be pushed out or summarized once the limit is reached.",
+      "Relevant, current, and permitted context produces better results than maximal context."
+    ],
+    "relatedConcepts": ["Token", "Prompt", "Hallucination"],
+    "resources": [
+      {
+        "label": "Anthropic docs — Context windows",
+        "url": "https://docs.anthropic.com/en/docs/build-with-claude/context-windows"
+      },
+      {
+        "label": "Anthropic docs — Prompt engineering overview",
+        "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
+      }
+    ]
+  }
+]
