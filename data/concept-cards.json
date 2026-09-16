@@ -21,5 +21,38 @@
         "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview"
       }
     ]
+  },
+  {
+    "term": "Prompt",
+    "explanation": "A prompt is the whole input a model is given for one turn: the instruction or question, plus every piece of surrounding context sent along with it. In Anthropic's Messages API that input has a visible structure — a top-level `system` field for instructions that apply from the start, and a `messages` array of user and assistant turns — so a prompt is usually assembled from several parts rather than typed as one string. Because the API is stateless, the full conversation history is resent on every request; the model has no memory of the previous turn beyond what the current prompt carries. A prompt steers a response but does not change the model — examples placed in a prompt work without any gradient updates or fine-tuning, and nothing in them persists once the request is over. The practical failure mode is a prompt that is clear to the person who wrote it and ambiguous to anyone else, which is what Anthropic's golden rule tests: show it to a colleague with minimal context and see whether they could follow it.",
+    "example": "Type \"add a card for Token\" into Claude Code and the model receives far more than those five words — its own system prompt, this project's CLAUDE.md, the create-concept-card skill, and every file read so far. The five words are still the weakest part: \"add a card\" does not say which file, which shape, or what counts as done. Rewrite it as \"Add a concept card for Token to data/concept-cards.json, matching the seven-field shape of the Context window entry, inserted alphabetically, then run npm run validate and show me the output.\" Same model, same repository; the second version names the file, the shape, the position, and the check that proves it worked. That is the golden rule in practice — a colleague with minimal context could follow the second prompt and not the first.",
+    "commonMisunderstanding": "Two things get assumed here. The first is that the prompt is just the sentence you type — it is not; that sentence arrives wrapped in a system prompt, the conversation so far, and any file or command output already pulled in, all of it resent on every request because the API keeps no state between calls. The second is that prompting teaches the model — it does not; examples in a prompt steer that one response without any gradient updates or fine-tuning, so nothing you write persists after the request ends, and a project's standing instructions have to be supplied again each time rather than learned once.",
+    "essentialPoints": [
+      "A prompt is the entire input a model receives for one turn — the instruction plus its surrounding context — not only the sentence a person types.",
+      "In the Messages API a prompt is structured: a top-level `system` field for instructions that apply from the start, and a `messages` array of user and assistant turns.",
+      "The Messages API is stateless, so the full conversation history is resent with every request.",
+      "A prompt steers a response but does not update the model's weights, so nothing in it persists after the request.",
+      "Being specific about the desired output, format, and constraints is what makes a prompt work — the golden rule is that a colleague with minimal context should be able to follow it.",
+      "Not every bad result is a prompting problem; some failures are better addressed by another change, such as selecting a different model."
+    ],
+    "relatedConcepts": ["Context window", "Token", "Large language model", "CLAUDE.md", "Hallucination", "System prompt"],
+    "resources": [
+      {
+        "label": "Anthropic — Prompt engineering overview (product documentation)",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
+      },
+      {
+        "label": "Anthropic — Prompting best practices (product documentation)",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+      },
+      {
+        "label": "Anthropic — Using the Messages API (product documentation)",
+        "url": "https://platform.claude.com/docs/en/build-with-claude/working-with-messages"
+      },
+      {
+        "label": "Brown et al. — Language Models are Few-Shot Learners (research paper, arXiv:2005.14165)",
+        "url": "https://arxiv.org/abs/2005.14165"
+      }
+    ]
   }
 ]
