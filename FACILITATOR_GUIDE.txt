@@ -1,18 +1,54 @@
 ========================================================================
 AETHER LIBRARY — FACILITATOR GUIDE
-All 10 assignments, in order, with the exact prompt to give participants
+All 10 assignments, in order, with the exact prompt that reliably
+produces the full working demo. FACILITATOR-ONLY — do not show this to
+participants. What participants see is STUDENT_ASSIGNMENT_GUIDE.txt /
+the slide deck, which gives requirements, not exact wording, on purpose.
 ========================================================================
 
 How to use this file:
-- Each assignment below has a "PROMPT TO GIVE PARTICIPANTS" block — read
-  it aloud, show it on screen, or paste it directly into the slide deck's
-  presenter view (it's already there — press S in the deck, or click
-  "Example prompt" in the toolbar to copy it with one click).
-- [TERM] in a prompt means the participant fills in their own chosen term
-  before using it.
+- These exact prompts are for YOU — to test the assignments yourself
+  before class, to know what a correct outcome looks like, and to help
+  someone who's stuck without just handing them the answer verbatim.
+- [TERM] means substitute a real term. Where a placeholder note follows,
+  read it before running the prompt.
 - "WATCH FOR" is what to circulate and look out for while the timer runs.
 - Every assignment is solo — no pairing, no mob programming. That starts
   in the five support days, not here.
+- These exact prompts were verified end to end against a real starter
+  repo on 2026-09-15 (branch test-01 at
+  github.com/jyse/aetherlink-classroom-starter) using the real Claude
+  Code CLI for every step, not simulated. Two things that dry run found
+  and this version corrects: (1) Assignments 2/3/4/6 originally let
+  Claude Code touch only the data file and skip building the page that
+  displays it — the wording below now explicitly closes that gap;
+  (2) Assignment 9's exact prompt used to describe building the game
+  itself, which is now pre-built in the starter repo — the wording below
+  is corrected to focus on checklist.md and the term-checker skill,
+  which is the actual remaining work.
+
+How this file relates to STUDENT_ASSIGNMENT_GUIDE.txt:
+- Same 10 assignments, same order, same timers — but this file and the
+  student one say different things on purpose. This file gives the
+  EXACT prompt wording that's been verified to work; the student file
+  gives only the REQUIREMENTS each participant's own prompt must cover,
+  deliberately withholding exact wording so people practise writing a
+  clear instruction themselves instead of copy-pasting one.
+- Read this file's "EXACT PROMPT" as your answer key, not something to
+  read aloud or paste for someone — if a participant is stuck, nudge
+  them toward the missing requirement (from the student guide's
+  checklist) rather than handing them your wording verbatim.
+- "WATCH FOR" only exists in this file. It's the real gaps and gotchas
+  found during the 2026-09-15 dry run — that's what to circulate and
+  look for while each timer runs. If a participant's result matches a
+  "WATCH FOR" symptom (e.g. an empty Profiles page after Assignment 2),
+  that's a known, already-diagnosed gap, not a new bug to debug from
+  scratch.
+- Both files must move together: today's "Two things that dry run
+  found" note above only applies because both guides already reflect
+  the fix. If either file is edited before or during class, check the
+  other one still matches — a mismatch means participants see
+  requirements this file's prompt no longer satisfies (or vice versa).
 
 ========================================================================
 DAY 1
@@ -24,7 +60,7 @@ ASSIGNMENT 1: Repository explorer                            25 minutes
 GOAL
 Use Claude Code to understand the project without changing it.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Explore this repository without changing anything.
 
@@ -45,7 +81,7 @@ and validation commands, protected areas, OPEN questions.
 
 EXPECTED RESULT
 An evidence-based repository map. No code changed, and unknowns are
-marked OPEN rather than guessed.
+marked OPEN rather than guessed. Verified: zero file changes afterward.
 
 WATCH FOR
 First solo assignment of the day — expect basic terminal questions in
@@ -57,16 +93,19 @@ have them dig into one OPEN question rather than move ahead.
 ASSIGNMENT 2: Participant profile                             30 minutes
 ------------------------------------------------------------------------
 GOAL
-Add your profile to the Aether Library.
+Add your profile to the Aether Library — including the page that shows
+it, since neither exists yet in the starter repo.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
-Inspect the existing profile structure and propose a participant
-profile for me.
+Inspect the existing repository structure and propose a participant
+profile for me — including the page that will display it, since
+neither the data file nor the page exists yet.
 
 First show:
-- the proposed content;
-- the files you would change;
+- the proposed profile content;
+- the files you would create or change, including the API route and
+  the page rendering, not just the data file;
 - how you will validate the result.
 
 Do not edit anything until I approve the plan. Do not include
@@ -77,39 +116,47 @@ INCLUDE: name, role, relevant experience, learning goal, one task you'd
 like AI to improve.
 
 EXPECTED RESULT
-Your profile appears in the application and passes validation, with the
-plan approved before any file changed.
+Your profile appears on a working Profiles page and passes validation,
+with the plan approved before any file changed.
 
 WATCH FOR
-Participants who skip straight to editing the file — redirect them back
-to explore/plan without being heavy-handed, this is the first time
-they'll feel the method in their own hands. Remind them explicitly: no
-confidential or unnecessary personal information.
+Verified 2026-09-15: without the explicit "including the page" wording
+above, Claude Code reliably adds the JSON entry and stops there — the
+page stays empty and looks broken. If someone's Profiles page is empty
+after this assignment, that's the exact gap; have them ask Claude Code
+to finish building the page. Also watch for participants who skip
+straight to editing the file — redirect them back to explore/plan.
+Remind them explicitly: no confidential or unnecessary personal
+information.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 3: Glossary contribution                            30 minutes
 ------------------------------------------------------------------------
 GOAL
-Choose one AI term and add it to the glossary.
+Choose one AI term and add it to the glossary — including the page that
+displays it.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Help me add the term [TERM] to the glossary.
 
 Write for product managers and developers who are new to agentic AI.
 Follow the existing glossary structure. Show the draft before editing
-the repository. Do not add claims that we cannot verify.
+the repository. Do not add claims that we cannot verify. If the
+Glossary page doesn't already display entries, build it as part of
+this work — a term that only exists in the data file isn't finished.
 ------------------------------------------------------------------------
 
 ADD: a short, plain-language definition. (The glossary is deliberately
 just term + definition — nothing else.)
 
 EXPECTED RESULT
-A new basic glossary entry appears in the application, reviewed as a
+A new glossary entry appears on a working Glossary page, reviewed as a
 draft before it was added.
 
 WATCH FOR
-The verification step is the whole point of this assignment — if
+Same gap as Assignment 2, corrected the same way — verified 2026-09-15.
+The verification step is also the whole point of this assignment: if
 someone's first draft goes straight in unchecked, stop and ask them to
 verify it against today's material first.
 
@@ -117,14 +164,17 @@ verify it against today's material first.
 ASSIGNMENT 4: Enriched concept card                            45 minutes
 ------------------------------------------------------------------------
 GOAL
-Turn one glossary term into a complete concept card.
+Turn one glossary term into a complete concept card — including the
+Library page that displays it.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Turn the glossary entry [TERM] into a complete concept card.
 
-First inspect the existing data structure and application design.
-Propose the card content and the smallest implementation plan. Verify
+First inspect the existing data structure and application design —
+including whether a Library page exists to display concept cards; if
+not, include building it in your plan. Propose the card content and
+the smallest implementation plan for both the data and the page. Verify
 the factual explanation and include reliable resources. Wait for my
 approval before changing files. Run the relevant checks afterwards.
 ------------------------------------------------------------------------
@@ -134,14 +184,18 @@ misunderstanding, essential points, related concepts, reliable
 resources.
 
 EXPECTED RESULT
-One enriched concept card appears in the Aether Library, verified and
-checked.
+One enriched concept card appears on a working Library page, verified
+and checked. Re-verified 2026-09-15 directly against this reference
+repo with real sources fetched and cited (Anthropic docs, Brown et al.
+2020) — see the "Prompt" card in data/concept-cards.json for a real
+example of the target output quality.
 
 WATCH FOR
 Longest assignment of the morning — the room will feel the jump from a
 basic glossary entry to a fully sourced card. Circulate and coach on
 "verify the factual explanation" specifically — that's the step people
-are tempted to skip under time pressure.
+are tempted to skip under time pressure. Also confirm the Library page
+actually renders, same gap as Assignments 2/3.
 
 ========================================================================
 DAY 2
@@ -153,7 +207,7 @@ ASSIGNMENT 5: Project instructions                             30 minutes
 GOAL
 Review and improve the repository's CLAUDE.md.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Review this repository and its CLAUDE.md.
 
@@ -166,11 +220,16 @@ proposed changes before editing.
 
 EXPECTED RESULT
 A CLAUDE.md that a stranger's Claude Code session could rely on without
-you explaining anything out loud.
+you explaining anything out loud. No gap found here in testing — this
+prompt already produces a complete, correct result on its own.
 
 WATCH FOR
 Participants pasting today's entire to-do list into CLAUDE.md — redirect
-them: it isn't a prompt landfill or a temporary notes file.
+them: it isn't a prompt landfill or a temporary notes file. Note: the
+"ask before network calls" rule participants write here in their own
+CLAUDE.md will matter again in Assignments 6 and 8 — a real, useful
+tension shows up later when a skill needs to fetch a source. That's not
+a bug if it happens; see Assignment 8's notes.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 6: Create a second card                             25 minutes
@@ -179,54 +238,79 @@ GOAL
 Create a second concept card with an ordinary prompt. Do not use a
 skill yet.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Turn the glossary entry [TERM] into a complete concept card.
 
 Use the same requirements and validation method as yesterday's approved
 card. Show the draft and implementation plan before changing anything.
+Confirm the new card renders correctly on the existing Library page.
 ------------------------------------------------------------------------
 
 EXPECTED RESULT
 A second concept card created through another one-off prompt — plus a
-clear sense of what had to be repeated.
+clear sense of what had to be repeated. Verified 2026-09-15: unlike
+Assignments 2-4, no page-building gap here in practice, since the
+Library page built in Assignment 4 already renders any card generically
+— the "confirm it renders" line is a cheap safety check, not usually a
+real fix needed.
 
 WATCH FOR
 Important: this must stay a normal, ad-hoc prompt — not a skill. The
 inconsistency this creates between people's results is exactly what
 motivates building a skill next. Don't let anyone jump ahead to
-Assignment 7 yet.
+Assignment 7 yet. Also: fetching sources is a network call, and
+Assignment 5's own CLAUDE.md may say to ask first — some participants
+will treat "same method as yesterday" as implicit pre-authorization.
+Either reading is defensible; it's worth a 30-second group discussion
+if it comes up.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 7: Teach Claude the method                          45 minutes
 ------------------------------------------------------------------------
 GOAL
-Improve the Create Concept Card skill (it ships intentionally
-incomplete).
+Build the create-concept-card skill from nothing — there is no starter
+skeleton in this repo.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
-Inspect the existing create-concept-card skill and the two approved
-concept cards.
+We now have two approved concept cards in data/concept-cards.json,
+created through ordinary one-off prompts. Create a reusable Claude Code
+skill at .claude/skills/create-concept-card/SKILL.md that packages this
+method, so future cards can be created consistently instead of by
+repeating instructions from scratch each time.
 
-Propose improvements that make the method reliable and reusable. The
-skill must use sources, preserve uncertainty as OPEN, follow the
-existing card structure, validate its output and stop for human
-approval. Show the revised skill before editing it.
+The skill must: require and check sources before trusting a factual
+claim, follow the existing concept-card structure exactly (inspect
+data/concept-cards.json for the real shape), preserve uncertainty as
+OPEN rather than inventing missing information, validate its output
+before treating a card as finished, and stop for explicit human
+approval before writing to data/concept-cards.json. It must only ever
+write to data/concept-cards.json — never data/glossary.json or
+data/profiles.json as a side effect.
+
+Propose the skill file's content first, then write it.
 ------------------------------------------------------------------------
 
 THE SKILL MUST COVER: required source information, card structure,
 factual verification, missing information, validation, human approval.
 
 EXPECTED RESULT
-A complete create-concept-card skill, tested against the two approved
-cards.
+A complete create-concept-card skill, tested against the approved
+cards. Verified 2026-09-15 in both the starter repo (built from
+literally nothing) and re-verified in this reference repo — in both
+cases it correctly refused a blanket "I approve in advance" and
+insisted on approving the actual shown draft. See
+.claude/skills/create-concept-card/SKILL.md in this repo for the real,
+complete, tested output.
 
 WATCH FOR
-This is the room's first time authoring their own skill — expect it to
-take longer than the timer implies. Your job here is coaching, not
-demoing a pre-built answer; circulate and check each skill still stops
-for human approval rather than finishing unattended.
+This is the room's first time authoring their own skill, from a
+genuinely blank page — expect it to take longer than the timer implies.
+Your job here is coaching, not demoing a pre-built answer; circulate
+and check each skill still stops for human approval rather than
+finishing unattended. If a participant's skill approves its own draft
+without asking, that's the thing to fix.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 8: Build the card library                           45 minutes
@@ -234,10 +318,10 @@ ASSIGNMENT 8: Build the card library                           45 minutes
 GOAL
 Use one instruction to process every approved glossary term.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
-Use the Create Concept Card skill to process every approved glossary
-term.
+Use the create-concept-card skill to process every remaining approved
+glossary term that doesn't have a concept card yet.
 
 For each term:
 1. Read the glossary entry.
@@ -257,64 +341,83 @@ Draft concept cards for all suitable terms, plus a status report ready
 for human review.
 
 WATCH FOR
-Low infra-risk for you to prepare since participants build and run it
-themselves — your job is circulating and checking each run actually
-stops to report rather than committing unattended. Watch especially for
-terms it should have marked OPEN instead of guessing.
+No page-building gap here — this only touches data via an
+already-working skill. The interesting thing verified 2026-09-15: with
+a real CLAUDE.md in place (Assignment 5) saying to ask before network
+calls, and the skill (Assignment 7) requiring sources before any claim,
+Claude Code can genuinely STOP mid-batch and ask a real clarifying
+question — which rule wins, and whether to approve each card
+individually or pre-approve the batch. If this happens live, that's the
+human-in-the-loop lesson demonstrating itself for real, not a bug —
+tell the room so, and let them make the call. Otherwise: circulate and
+check each run actually stops to report rather than committing
+unattended, and watch for terms it should have marked OPEN instead of
+guessing.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 9: Learning game                                    60 minutes
 ------------------------------------------------------------------------
 GOAL
-Complete the "Explain It Back" game — including real AI feedback from
-the participant's own Claude Code session. No API keys, no external
-model calls, no database, anywhere in this.
+The game itself already works. Build checklist.md and the term-checker
+skill — both from nothing — then actually use them. No API keys, no
+external model calls, no database, anywhere in this.
 
-PROMPT TO GIVE PARTICIPANTS (part 1 — build the game)
+EXACT PROMPT — PART A (define what "good" means)
 ------------------------------------------------------------------------
-Explore the existing game page and concept-card data.
-
-Propose the smallest implementation that lets a participant read a
-term, enter an explanation, reveal the approved concept card, reflect
-on missing elements and continue to the next term. Reuse the existing
-visual design. Do not add authentication, a database or external AI
-calls. Show the plan and test cases before implementation.
-
-Then wire up real AI feedback using Claude Code itself — no API
-credentials required:
-- On Submit, POST the explanation to the local server, which writes it
-  to data/latest-submission.json (a single slot that resets each round
-  — no history needed).
-- Add a manual "Check feedback" button that GETs
-  data/latest-feedback.json and displays it. Do not auto-poll — every
-  step must stay human-triggered.
+Define the contents of checklist.md at the repo root: what should a
+good "explain this AI term back in your own words" answer contain? Base
+it on the concept cards already in data/concept-cards.json — central
+meaning, important elements, a practical example, absence of incorrect
+claims, absence of missing information relative to the concept card,
+and relevant resources to recommend. Propose the content, then write it
+to checklist.md.
 ------------------------------------------------------------------------
 
-PROMPT TO GIVE PARTICIPANTS (part 2 — actually check a submission)
+EXACT PROMPT — PART B (build the checking skill)
+------------------------------------------------------------------------
+Create a reusable Claude Code skill at .claude/skills/term-checker/SKILL.md.
+When asked to check a participant's latest Explain It Back submission,
+it should read checklist.md and data/latest-submission.json, compare
+the submission against the matching concept card in
+data/concept-cards.json (or the glossary entry if no concept card
+exists yet for that term), and write structured feedback to
+data/latest-feedback.json — a rating plus specifics on what's missing
+or wrong. The skill must be written generically against whatever
+checklist.md currently says, not hardcode criteria into the skill
+itself. It must never call an external API or model — all checking is
+done by you, Claude Code, directly, using only local files. Propose the
+skill's content, then write it.
+------------------------------------------------------------------------
+
+EXACT PROMPT — PART C (actually check a submission)
 ------------------------------------------------------------------------
 Check my latest submission using the term-checker skill.
 ------------------------------------------------------------------------
-(This is said directly to Claude Code, in the terminal, once the game
-above is wired up and a participant has clicked Submit on the game
-page. Claude Code reads data/latest-submission.json and checklist.md,
-applies the term-checker skill, and writes data/latest-feedback.json —
-that's what makes the "Check feedback" button show something.)
+(Said directly to Claude Code, in the terminal, once a participant has
+clicked Submit on the game page. Claude Code reads
+data/latest-submission.json and checklist.md, applies the term-checker
+skill, and writes data/latest-feedback.json — that's what makes the
+"Check feedback" button show something.)
 
 EXPECTED RESULT
 A working browser-based learning game where AI feedback comes from the
 participant's own authenticated Claude Code session — no API
-credentials, no external model calls, no database.
+credentials, no external model calls, no database. Verified 2026-09-15
+end to end: a genuinely so-so test explanation of "Agent" was submitted
+through the real browser UI, checked via Part C, and received an
+accurate "Review this concept" rating with correctly-cited evidence,
+correctly displayed by clicking "Check feedback."
 
 WATCH FOR
-Longest single assignment of the two days — give it the full 60 minutes
-and don't rush the wrap-up. Two distinct halves: first the game UI,
-then the file-based AI feedback bridge. The thing to protect: no API
-keys, no external model calls, no database — feedback comes entirely
-from the participant's own already-authenticated Claude Code session
-reading and writing local files. Watch for people who build the UI and
-skip the term-checker invocation because time is short — prioritise
-getting every participant to say that second prompt at least once, even
-if the UI polish is incomplete.
+Do NOT ask participants to build the game itself — it already works in
+the starter repo, and asking them to rebuild working Submit/Check-
+feedback wiring would be redundant with Assignments 2-4 and would blow
+the 60-minute budget. The real work is Parts A and B. Longest single
+assignment of the two days regardless — give it the full time and don't
+rush the wrap-up. Watch for people who build checklist.md and the skill
+but skip Part C because time is short; prioritise getting every
+participant to say that exact phrase at least once, even if
+checklist.md is thin.
 
 ------------------------------------------------------------------------
 ASSIGNMENT 10: Connected context                               30 minutes
@@ -322,7 +425,7 @@ ASSIGNMENT 10: Connected context                               30 minutes
 GOAL
 Retrieve one authorised item from a real Worldline system, read-only.
 
-PROMPT TO GIVE PARTICIPANTS
+EXACT PROMPT
 ------------------------------------------------------------------------
 Use the approved connection to retrieve one authorised [Jira ticket /
 GitLab item / Confluence page].
@@ -344,12 +447,14 @@ No external changes. A sourced, plain-language explanation of one
 connected item, with unclear points marked OPEN.
 
 WATCH FOR
-Highest infra-risk moment of the two days — verify the MCP connection
-end-to-end yourself before class. Fallback: if a participant's
-connection fails, have them use the local fixture files instead and
-explain those — the teaching point (retrieve, explain, do not modify)
-survives without a live round-trip. Keep a captured example ready to
-show the room if several people need the fallback at once.
+Not part of the 2026-09-15 dry run — no real Worldline MCP access in a
+local test environment. Verify this one end-to-end yourself, live,
+against real Worldline systems before class; it's still the highest
+infra-risk moment of the two days. Fallback: if a participant's
+connection fails, have them use local fixture files instead and explain
+those — the teaching point (retrieve, explain, do not modify) survives
+without a live round-trip. Keep a captured example ready to show the
+room if several people need the fallback at once.
 
 ========================================================================
 END OF ASSIGNMENTS

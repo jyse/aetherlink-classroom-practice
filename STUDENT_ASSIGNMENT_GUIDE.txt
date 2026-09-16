@@ -1,0 +1,224 @@
+========================================================================
+AETHER LIBRARY — STUDENT ASSIGNMENT GUIDE
+What each assignment requires your OWN prompt to cover — not exact
+wording to copy-paste. This is what goes on the slides.
+========================================================================
+
+Why no exact prompt: the point of these two days is learning to write a
+clear instruction yourself — a task brief, not a spell. If you're only
+ever copy-pasting someone else's exact words, you're not practising that.
+Each assignment below tells you what your prompt needs to accomplish;
+the wording is yours.
+
+[TERM] means: pick your own term for that assignment.
+
+Across both days, these ten assignments build one real thing together:
+the Aether Library. Do them in order and by the end you'll have the same
+working app the reference repo ships — profiles, a glossary, a full
+concept-card library, two of your own Claude Code skills, and a working
+learning game with real AI feedback.
+
+========================================================================
+DAY 1
+========================================================================
+
+------------------------------------------------------------------------
+ASSIGNMENT 1: Repository explorer                             25 minutes
+------------------------------------------------------------------------
+DELIVER: app purpose, project structure, relevant files, start and
+validate commands, protected areas, OPEN questions.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- explore the repository without changing anything
+- explain what the app does and how it's structured
+- find where profiles and glossary data live
+- find the start and validate commands
+- flag files that need extra care
+- mark anything unverifiable as OPEN rather than guessing
+
+EXPECTED RESULT
+An evidence-based repository map. No code changed, unknowns marked OPEN.
+
+------------------------------------------------------------------------
+ASSIGNMENT 2: Participant profile                             30 minutes
+------------------------------------------------------------------------
+INCLUDE: name, role, team, experience, learning goal, one workflow
+you'd like AI to improve.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- inspect the existing structure first
+- propose both the profile data AND the page that displays it — a
+  profile that only exists in a data file isn't finished
+- show the plan before changing anything
+- leave out confidential or unnecessary personal information
+- confirm afterward that the profile is actually visible on the
+  Profiles page
+
+EXPECTED RESULT
+Your profile appears on a working Profiles page and passes validation,
+with the plan approved before any file changed.
+
+------------------------------------------------------------------------
+ASSIGNMENT 3: Glossary contribution                           30 minutes
+------------------------------------------------------------------------
+ADD: a short, plain-language definition of one AI term.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- follow the existing glossary structure
+- write for someone new to agentic AI
+- show the draft before touching the repository
+- avoid claims that can't be backed up
+- build the Glossary page too, if it doesn't already display entries
+
+EXPECTED RESULT
+A new glossary entry appears on a working Glossary page, reviewed as a
+draft before it was added.
+
+------------------------------------------------------------------------
+ASSIGNMENT 4: Enriched concept card                           45 minutes
+------------------------------------------------------------------------
+INCLUDE: plain-language explanation, practical example, common
+misunderstanding, essential points, related concepts, reliable
+resources.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- inspect the existing data structure and app design first
+- propose the card content and the smallest plan — including the
+  Library page, if it doesn't exist yet
+- verify the explanation with real, checked sources
+- wait for approval before changing files
+- run the relevant checks afterward
+
+EXPECTED RESULT
+One enriched concept card appears on a working Library page, verified
+and checked.
+
+========================================================================
+DAY 2
+========================================================================
+
+------------------------------------------------------------------------
+ASSIGNMENT 5: Project instructions                            30 minutes
+------------------------------------------------------------------------
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- review the repository and the current CLAUDE.md
+- propose the MINIMUM persistent instructions needed: project purpose,
+  relevant structure, conventions, approved commands, privacy,
+  validation, human approval
+- leave out temporary assignment notes or personal preferences
+- show the proposed changes before editing
+
+EXPECTED RESULT
+A CLAUDE.md a stranger's Claude Code session could rely on without you
+explaining anything out loud.
+
+------------------------------------------------------------------------
+ASSIGNMENT 6: Create a second card                            25 minutes
+------------------------------------------------------------------------
+Do NOT use a skill yet — this stays an ordinary, one-off prompt.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- use the same requirements and validation method as yesterday's
+  approved card
+- show the draft and plan before changing anything
+- confirm the new card renders correctly on the existing Library page
+
+EXPECTED RESULT
+A second concept card, created through another one-off prompt, plus a
+clear sense of what you had to repeat from scratch.
+
+------------------------------------------------------------------------
+ASSIGNMENT 7: Teach Claude the method                         45 minutes
+------------------------------------------------------------------------
+There is no starter skill file this time — you're building it from
+nothing.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- use the approved card(s) as evidence of what "good" looks like
+- create a reusable skill at
+  .claude/skills/create-concept-card/SKILL.md that packages this method
+- require real sources before trusting any factual claim
+- follow the exact existing concept-card structure
+- keep uncertainty as OPEN rather than inventing content
+- validate its output before calling a card finished
+- stop for explicit human approval before writing to
+  data/concept-cards.json
+- only ever write to data/concept-cards.json — never touch
+  data/glossary.json or data/profiles.json as a side effect
+
+EXPECTED RESULT
+A complete create-concept-card skill, tested against the approved
+cards.
+
+------------------------------------------------------------------------
+ASSIGNMENT 8: Build the card library                          45 minutes
+------------------------------------------------------------------------
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- use the create-concept-card skill on every remaining approved
+  glossary term, one at a time
+- for each: read the entry, check whether information/sources are
+  sufficient, create the card, validate required fields, record READY,
+  REVISE or OPEN, then continue
+- never invent missing information
+- never commit anything
+- show one complete report for human review once every term is done
+
+EXPECTED RESULT
+Draft concept cards for every suitable term, plus a status report ready
+for human review.
+
+------------------------------------------------------------------------
+ASSIGNMENT 9: Learning game                                   60 minutes
+------------------------------------------------------------------------
+The game itself already works — your job is the checking mechanism
+behind it, in two parts, then actually using it.
+
+PART A — define what "good" means
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- propose what a good "explain this term back" answer should contain,
+  based on the concept cards already built: central meaning, essential
+  points, a practical example, no incorrect claims, no missing
+  information versus the concept card, relevant resources
+- write the result to checklist.md once you approve it
+
+PART B — build the checking skill
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- create a skill at .claude/skills/term-checker/SKILL.md
+- read checklist.md and the latest submission, compare it against the
+  matching concept card (or the glossary entry if no card exists yet),
+  and write structured feedback
+- write it generically against whatever checklist.md currently says —
+  never hardcode the criteria into the skill itself
+- never call an external API or model — all checking happens locally
+
+PART C — actually use it
+Once both are built, say this directly to Claude Code (this part IS
+exact — it's a command, not a task brief):
+  "Check my latest submission using the term-checker skill."
+
+EXPECTED RESULT
+A working game where AI feedback comes entirely from your own
+authenticated Claude Code session — no API credentials, no external
+model calls, no database, anywhere in this.
+
+------------------------------------------------------------------------
+ASSIGNMENT 10: Connected context                              30 minutes
+------------------------------------------------------------------------
+CHOOSE ONE: one Jira ticket, one GitLab issue or merge request, one
+Confluence page.
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- retrieve one authorised item using the approved connection, read-only
+- explain what information was retrieved and which fields support it
+- note what remains unclear
+- list which actions the connection could perform that you did not
+  approve
+- not modify the external system in any way
+
+EXPECTED RESULT
+No external changes. A sourced, plain-language explanation of one
+connected item, with unclear points marked OPEN.
+
+========================================================================
+END
+========================================================================
