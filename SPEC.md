@@ -19,7 +19,7 @@ Aether Library is the hands-on practice project for the AetherLink × Worldline 
 
 **Dependencies: zero.** `package.json`'s `dependencies` is an empty object, so `npm install` needs no internet access at all — matters on a locked-down corporate network.
 
-**No MCP anywhere in this repo, on purpose.** An earlier draft had a small local MCP server here (used by an earlier version of Assignment 9). The curriculum was revised and nothing in the final version ever calls it — Slide 70 says explicitly "the repository itself does not require MCP" — so it was removed rather than left as unexplained clutter that Claude Code would still prompt participants to trust on first run. The curriculum's real MCP work (Part 5, Assignment 10) connects to Worldline's actual Jira/GitLab/Confluence systems, configured separately, outside this repo.
+**No MCP anywhere in this repo, on purpose.** An earlier draft had a small local MCP server here (used by an earlier version of Assignment 11). The curriculum was revised and nothing in the final version ever calls it — Slide 70 says explicitly "the repository itself does not require MCP" — so it was removed rather than left as unexplained clutter that Claude Code would still prompt participants to trust on first run. The curriculum's real MCP work (Part 5, Assignment 12) connects to Worldline's actual Jira/GitLab/Confluence systems, configured separately, outside this repo.
 
 ## 3. Data model
 
@@ -57,7 +57,7 @@ Deliberately minimal — just a term and a plain-language definition. The richer
   "resources": [{ "label": "string", "url": "string" }]
 }
 ```
-An enriched, "graduated" version of a glossary term. Seeded with one fully-filled example (`Context window`) so participants see the target shape before building their own (Assignment 4), then process the rest of the glossary through the `create-concept-card` skill in one bounded run (Assignment 8).
+An enriched, "graduated" version of a glossary term. Seeded with one fully-filled example (`Context window`) so participants see the target shape before building their own (Assignment 4), then process the rest of the glossary through the `create-concept-card` skill in one bounded run (Assignment 10).
 
 ### `data/fixtures/`
 `glossary-complete.json` and `glossary-incomplete.json` — used only by `npm run validate:fixtures` to demonstrate the validator actually catches a broken entry (a deliberately missing field), not to seed the app itself.
@@ -124,7 +124,7 @@ Five explicit steps, each human-triggered on purpose (no auto-polling anywhere i
 
 Two skills live under `.claude/skills/`, deliberately at different completion states:
 
-- **`create-concept-card`** — ships **intentionally incomplete**. Has a real skeleton (frontmatter, a rough procedure) but deliberately omits: required source information, exact card structure/validation, factual-verification approach, handling missing information, the validation step, and the human-approval stop condition. Assignment 7 has participants fill these in, using the one approved example card as a target.
+- **`create-concept-card`** — ships **intentionally incomplete**. Has a real skeleton (frontmatter, a rough procedure) but deliberately omits: required source information, exact card structure/validation, factual-verification approach, handling missing information, the validation step, and the human-approval stop condition. Assignment 9 has participants fill these in, using the one approved example card as a target.
 - **`term-checker`** — ships **complete**. Reads `checklist.md` and `data/latest-submission.json`, compares, writes `data/latest-feedback.json`. Written generically against whatever `checklist.md` currently says — the criteria live in the checklist, not hardcoded into the skill. (Rationale for shipping this one complete: the curriculum lists it, alongside `checklist.md` itself, under "add before teaching" rather than as something an assignment asks participants to build — the class refines the checklist, not this skill's mechanism.)
 
 ## 8. `checklist.md`
@@ -163,4 +163,4 @@ Restores every tracked file to the last commit. Deliberately does **not** touch 
 
 ## 13. Known open decision
 
-The curriculum's own Slide 63 ("Game starter state") describes the game as shipping with visual design and an empty feedback area, expecting **participants to complete the behaviour** with Claude Code (an Assignment 9 build task) — the same pattern as `create-concept-card`. As currently shipped, the game is **fully built and working**, matching the "build the complete demo first" sequencing decision made during development. Deriving an intentionally-incomplete **starter** version of the game from this working reference (so Assignment 9 has something left to build) is a deliberate next step, not yet done.
+The curriculum's own Slide 63 ("Game starter state") describes the game as shipping with visual design and an empty feedback area, expecting **participants to complete the behaviour** with Claude Code (an Assignment 11 build task) — the same pattern as `create-concept-card`. As currently shipped, the game is **fully built and working**, matching the "build the complete demo first" sequencing decision made during development. Deriving an intentionally-incomplete **starter** version of the game from this working reference (so Assignment 11 has something left to build) is a deliberate next step, not yet done.

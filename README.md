@@ -84,7 +84,7 @@ node scripts/validate.js data/fixtures/glossary-incomplete.json glossary
 ## The Explain It Back game and the submission/feedback file bridge
 
 The Game page shows one random glossary term, an answer box, and a Submit
-button. This is Assignment 9's required behaviour, and it works like this:
+button. This is Assignment 11's required behaviour, and it works like this:
 
 1. You read the term, write your own explanation, and click **Submit**. The
    app `POST`s it to the local server, which writes it to
@@ -132,7 +132,7 @@ Two skills live under `.claude/skills/`:
   a rough procedure) but deliberately leaves out the specifics — required
   source information, exact card structure and validation, factual
   verification, handling missing information, the validation step, and the
-  human-approval stop condition. Assignment 7 has you fill those in, based on
+  human-approval stop condition. Assignment 9 has you fill those in, based on
   the approved card(s) already in the repo.
 - **`term-checker`** — checks an Explain It Back submission against
   `checklist.md` and writes `data/latest-feedback.json`. Ships **complete**,
@@ -155,7 +155,7 @@ Two skills live under `.claude/skills/`:
   Library page header and the game's "waiting for feedback" state).
 - `data/profiles.json` — participant profiles (Assignment 2 target).
 - `data/glossary.json` — AI terminology entries (Assignment 3 target).
-- `data/concept-cards.json` — enriched concept cards (Assignment 4/7/8
+- `data/concept-cards.json` — enriched concept cards (Assignment 4/9/10
   target). Seeded with one complete example.
 - `data/fixtures/` — one complete and one deliberately incomplete glossary
   fixture, for exercising `npm run validate`.
@@ -168,7 +168,7 @@ Two skills live under `.claude/skills/`:
   `notes/day1-learning-note.md` and fill it in at the end of Day 1. You'll use
   it again on Day 2.
 - `CLAUDE.md` — project instructions for Claude Code. You'll review and
-  improve this yourself in Assignment 5.
+  improve this yourself in Assignment 6.
 
 ## About MCP and this repo
 
@@ -177,7 +177,7 @@ a small local MCP server here, but nothing in the final curriculum ever
 calls it (Slide 70 says so explicitly: "the repository itself does not
 require MCP"), so it was removed rather than left as unexplained clutter
 that Claude Code would still prompt you to trust on first run. The
-curriculum's actual MCP work (Part 5, Assignment 10) connects to Worldline's
+curriculum's actual MCP work (Part 5, Assignment 12) connects to Worldline's
 real Jira/GitLab/Confluence systems — that's configured separately, outside
 this repo, against real Worldline access, not anything in this folder.
 
@@ -186,7 +186,7 @@ this repo, against real Worldline access, not anything in this folder.
 `CLAUDE.md` in this repo is intentionally minimal — it covers the project's
 purpose and structure but leaves out approved commands, privacy boundaries,
 validation expectations, and the human-approval boundary on purpose.
-Assignment 5 has each participant add those themselves and then prove it with
+Assignment 6 has each participant add those themselves and then prove it with
 a fresh-session test. Please don't pre-fill it before the class.
 
 The Profiles and Glossary pages likewise ship with no search box, no

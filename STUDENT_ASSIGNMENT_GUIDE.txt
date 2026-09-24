@@ -12,7 +12,7 @@ the wording is yours.
 
 [TERM] means: pick your own term for that assignment.
 
-Across both days, these ten assignments build one real thing together:
+Across both days, these thirteen assignments build one real thing together:
 the Aether Library. Do them in order and by the end you'll have the same
 working app the reference repo ships — profiles, a glossary, a full
 concept-card library, two of your own Claude Code skills, and a working
@@ -98,24 +98,88 @@ DAY 2
 ========================================================================
 
 ------------------------------------------------------------------------
-ASSIGNMENT 5: Project instructions                            30 minutes
+ASSIGNMENT 5: Design your Library                             20 minutes
 ------------------------------------------------------------------------
+Make the Library and AetherBOT look and feel like yours.
+
+DECIDE: the feeling (calm, playful, bold…), 3+ colour palettes, fonts
+and shapes, AetherBOT's look and voice.
+
+- describe the look you want in words: feeling, brand colours, fonts,
+  mood
+- ask Claude Code to inspect how styling and the light/dark toggle work
+  today, and to propose the changes — show the plan before editing
+- build a theme switcher with at least 3 palettes (for example light,
+  dark and your own brand), remembered after a reload
+- restyle AetherBOT: avatar, greeting, speech bubbles, colours and tone
+  of voice
+- check it in the browser: readable contrast, every page still works —
+  show your neighbour
+
+EXPECTED RESULT
+A Library with your own look, a working theme switcher, and a chatbot
+that looks and sounds the way you decided.
+
+------------------------------------------------------------------------
+ASSIGNMENT 6: Project instructions                            30 minutes
+------------------------------------------------------------------------
+Write AetherBOT's rules where every Claude session can read them: in
+CLAUDE.md.
+
+PUT IN CLAUDE.md: what AetherBOT is for, where its answers come from,
+your rules (at least 3), how to test a change, when to ask for
+approval.
+RULE IDEAS: answer only from the glossary and cards; say OPEN when it
+doesn't know; name the card it used; refuse off-topic questions; never
+repeat personal profile details.
+
 YOUR PROMPT MUST ASK CLAUDE CODE TO:
-- review the repository and the current CLAUDE.md
-- propose the MINIMUM persistent instructions needed: project purpose,
-  relevant structure, conventions, approved commands, privacy,
-  validation, human approval
+- explore how AetherBOT works today and review the current CLAUDE.md
+- use your own rules (at least 3), in your own words
+- propose the MINIMUM persistent instructions: what the bot is, where
+  its data comes from, your rules, how to test a change, when to ask
+  for approval
 - leave out temporary assignment notes or personal preferences
 - show the proposed changes before editing
 
 EXPECTED RESULT
-A CLAUDE.md a stranger's Claude Code session could rely on without you
-explaining anything out loud.
+A CLAUDE.md that tells any new Claude session how AetherBOT must
+behave, without you explaining anything out loud.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 6: Create a second card                            25 minutes
+ASSIGNMENT 7: Build AetherBOT from your rules                 25 minutes
 ------------------------------------------------------------------------
-Do NOT use a skill yet — this stays an ordinary, one-off prompt.
+Your rules are in CLAUDE.md. Now make the bot follow them — without
+repeating them in your prompt. The bot has no AI model inside.
+
+COMMAND IDEAS: quiz me; compare X and Y; what is related to X?
+
+YOUR PROMPT MUST ASK CLAUDE CODE TO:
+- make AetherBOT follow the rules in CLAUDE.md (do NOT paste the rules
+  into your prompt)
+- add 1–2 commands, in your own words
+- show the plan before editing
+- test with questions that should work and questions that should
+  trigger a rule
+- if a rule fails, decide: is the code wrong, or is the rule unclear in
+  CLAUDE.md?
+
+EXPECTED RESULT
+AetherBOT follows the rules written in CLAUDE.md, answers your new
+commands, and says OPEN instead of guessing.
+
+REVIEW (10 minutes): ask your partner's AetherBOT five tricky
+questions — a term it should know, a term that is not in the Library,
+an off-topic question, a question about someone's profile, a question
+worded in a tricky way. Decide PASS, REVISE or OPEN: did every rule
+hold?
+
+------------------------------------------------------------------------
+ASSIGNMENT 8: Create a second card                            25 minutes
+------------------------------------------------------------------------
+DELIVER: a second concept card, and a list of what you had to repeat.
+Choose a second term first — add it to the glossary if it isn't there
+yet.
 
 YOUR PROMPT MUST ASK CLAUDE CODE TO:
 - use the same requirements and validation method as yesterday's
@@ -123,12 +187,14 @@ YOUR PROMPT MUST ASK CLAUDE CODE TO:
 - show the draft and plan before changing anything
 - confirm the new card renders correctly on the existing Library page
 
+Afterwards, note which instructions you had to repeat from scratch.
+
 EXPECTED RESULT
 A second concept card, created through another one-off prompt, plus a
 clear sense of what you had to repeat from scratch.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 7: Teach Claude the method                         45 minutes
+ASSIGNMENT 9: Teach Claude the method                         45 minutes
 ------------------------------------------------------------------------
 There is no starter skill file this time — you're building it from
 nothing.
@@ -151,7 +217,7 @@ A complete create-concept-card skill, tested against the approved
 cards.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 8: Build the card library                          45 minutes
+ASSIGNMENT 10: Build the card library                          45 minutes
 ------------------------------------------------------------------------
 YOUR PROMPT MUST ASK CLAUDE CODE TO:
 - use the create-concept-card skill on every remaining approved
@@ -168,7 +234,7 @@ Draft concept cards for every suitable term, plus a status report ready
 for human review.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 9: Learning game                                   60 minutes
+ASSIGNMENT 11: Learning game                                   60 minutes
 ------------------------------------------------------------------------
 The game itself already works — your job is the checking mechanism
 behind it, in two parts, then actually using it.
@@ -202,7 +268,7 @@ authenticated Claude Code session — no API credentials, no external
 model calls, no database, anywhere in this.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 10: Connected context                              30 minutes
+ASSIGNMENT 12: Connected context                              30 minutes
 ------------------------------------------------------------------------
 CHOOSE ONE: one Jira ticket, one GitLab issue or merge request, one
 Confluence page.
@@ -218,6 +284,26 @@ YOUR PROMPT MUST ASK CLAUDE CODE TO:
 EXPECTED RESULT
 No external changes. A sourced, plain-language explanation of one
 connected item, with unclear points marked OPEN.
+
+------------------------------------------------------------------------
+ASSIGNMENT 13: From ticket to feature                          25 minutes
+------------------------------------------------------------------------
+DELIVER: a plain-language explanation, a plan for one Library feature,
+a handoff note for your partner.
+
+- take the item you retrieved in Assignment 12 (still read-only)
+- ask Claude Code to explain what it asks for and what remains unclear
+  (OPEN)
+- ask for a plan: which Library feature or change would help, which
+  files, how to test it — no edits yet
+- give your partner the plan; in a fresh session (/clear) they review
+  it and say what is missing
+- write a short handoff note so your partner could carry on without
+  you
+
+EXPECTED RESULT
+A reviewed plan (no external system changed) and a handoff note someone
+else could pick up.
 
 ========================================================================
 END

@@ -1,6 +1,6 @@
 ========================================================================
 AETHER LIBRARY — FACILITATOR GUIDE
-All 10 assignments, in order, with the exact prompt that reliably
+All 13 assignments, in order, with the exact prompt that reliably
 produces the full working demo. FACILITATOR-ONLY — do not show this to
 participants. What participants see is STUDENT_ASSIGNMENT_GUIDE.txt /
 the slide deck, which gives requirements, not exact wording, on purpose.
@@ -13,22 +13,23 @@ How to use this file:
 - [TERM] means substitute a real term. Where a placeholder note follows,
   read it before running the prompt.
 - "WATCH FOR" is what to circulate and look out for while the timer runs.
-- Every assignment is solo — no pairing, no mob programming. That starts
-  in the five support days, not here.
+- Every assignment is solo — no mob programming; that starts in the five
+  support days. The only exception: Day 2's Assignments 7 and 13 end with a
+  short review by a partner (each person still runs their own session).
 - These exact prompts were verified end to end against a real starter
   repo on 2026-09-15 (branch test-01 at
   github.com/jyse/aetherlink-classroom-starter) using the real Claude
   Code CLI for every step, not simulated. Two things that dry run found
-  and this version corrects: (1) Assignments 2/3/4/6 originally let
+  and this version corrects: (1) Assignments 2/3/4/8 originally let
   Claude Code touch only the data file and skip building the page that
   displays it — the wording below now explicitly closes that gap;
-  (2) Assignment 9's exact prompt used to describe building the game
+  (2) Assignment 11's exact prompt used to describe building the game
   itself, which is now pre-built in the starter repo — the wording below
   is corrected to focus on checklist.md and the term-checker skill,
   which is the actual remaining work.
 
 How this file relates to STUDENT_ASSIGNMENT_GUIDE.txt:
-- Same 10 assignments, same order, same timers — but this file and the
+- Same 13 assignments, same order, same timers — but this file and the
   student one say different things on purpose. This file gives the
   EXACT prompt wording that's been verified to work; the student file
   gives only the REQUIREMENTS each participant's own prompt must cover,
@@ -201,38 +202,104 @@ actually renders, same gap as Assignments 2/3.
 DAY 2
 ========================================================================
 
+Day 2 opens with Constance's warm-up (Stekkie show & tell, LibreChat bio,
+action-figure avatar, then the avatar in the Aether Library with Claude
+Code). Those slides are not numbered assignments; numbering below starts
+again at the first real assignment of the day.
+
 ------------------------------------------------------------------------
-ASSIGNMENT 5: Project instructions                             30 minutes
+ASSIGNMENT 5: Design your Library                             20 minutes
 ------------------------------------------------------------------------
 GOAL
-Review and improve the repository's CLAUDE.md.
+The creative one. Practise describing what you want to SEE, then use the
+Explore, Plan, Create, Test, Review cycle at design speed.
 
-EXACT PROMPT
+EXAMPLE PROMPT (fallback only — do not hand this out)
 ------------------------------------------------------------------------
-Review this repository and its CLAUDE.md.
-
-Propose the minimum persistent instructions Claude needs to work safely
-and consistently here. Cover project purpose, relevant structure,
-conventions, approved commands, privacy, validation and human approval.
-Do not add temporary assignment notes or personal preferences. Show the
-proposed changes before editing.
+Inspect how the Library is styled and how the light/dark toggle works.
+I want a [feeling] look with [colours] and [fonts]. Propose a theme
+switcher with at least three palettes that is remembered after a reload,
+and restyle AetherBOT: avatar, greeting, speech bubbles and tone of
+voice. Show the plan before editing, then tell me how to check every
+page.
 ------------------------------------------------------------------------
 
 EXPECTED RESULT
-A CLAUDE.md that a stranger's Claude Code session could rely on without
-you explaining anything out loud. No gap found here in testing — this
-prompt already produces a complete, correct result on its own.
+A working theme switcher (3+ palettes, survives a reload), a restyled
+AetherBOT, every page still working, no data files changed.
+
+WATCH FOR
+Encourage small rounds (change, look, adjust) over one giant request.
+Common problems: restyling everything at once and breaking a page;
+changes that touch data files (only styling and app code should change);
+a theme that looks good but is lost on reload; unreadable contrast.
+Good descriptions name a feeling and concrete details ("calm and
+professional, deep blue, rounded cards"), not code. The bot's voice they
+design here is useful input for the rules they write in Assignment 6.
+
+------------------------------------------------------------------------
+ASSIGNMENT 6: Project instructions                             30 minutes
+------------------------------------------------------------------------
+GOAL
+Write AetherBOT's rules into CLAUDE.md, so every Claude session that
+works on the bot reads them. CLAUDE.md taught through the chatbot.
+
+EXACT PROMPT (fallback only — do not hand this out)
+------------------------------------------------------------------------
+Review how AetherBOT works today and review this repository's
+CLAUDE.md. Propose the minimum persistent instructions Claude needs to
+work on the bot safely: what it is for, where its answers come from,
+these rules: [3 rules], how to test a change and when to ask for
+approval. Do not add temporary assignment notes or
+personal preferences. Show the proposed changes before editing.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+A CLAUDE.md that tells a brand-new session how AetherBOT must behave.
+The fresh-session test (/clear, neighbour asks five questions about the
+bot) proves it.
 
 WATCH FOR
 Participants pasting today's entire to-do list into CLAUDE.md — redirect
-them: it isn't a prompt landfill or a temporary notes file. Note: the
-"ask before network calls" rule participants write here in their own
-CLAUDE.md will matter again in Assignments 6 and 8 — a real, useful
-tension shows up later when a skill needs to fetch a source. That's not
-a bug if it happens; see Assignment 8's notes.
+them: it isn't a prompt landfill or a temporary notes file. Rules that
+are vague ("be helpful") — push for checkable ones ("say OPEN when no
+card matches"). If someone adds an "ask before network calls" rule, it
+will matter again in Assignments 8 and 10 — a real, useful tension when a
+skill needs to fetch a source. That's not a bug; see Assignment 10's
+notes.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 6: Create a second card                             25 minutes
+ASSIGNMENT 7: Build AetherBOT from your rules                 25 minutes
+------------------------------------------------------------------------
+GOAL
+The payoff of Assignment 6: Claude Code builds the bot from the rules in
+CLAUDE.md, so the participant does not repeat them in the prompt. The
+chatbot is plain code, no model inside.
+
+EXAMPLE PROMPT (fallback only — do not hand this out)
+------------------------------------------------------------------------
+Make AetherBOT follow the rules in CLAUDE.md, and add these commands:
+[1-2 commands]. Show the plan before editing. Afterwards, test it with
+questions that should work and questions that should trigger each rule.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+The bot follows the rules written in CLAUDE.md, answers the new
+commands and says OPEN instead of guessing. Review: partners ask five
+tricky questions (known term, unknown term, off-topic, question about
+someone's profile, tricky wording) and decide PASS, REVISE or OPEN.
+
+WATCH FOR
+If someone pastes the rules into their prompt anyway, ask them to delete
+them and try again — CLAUDE.md is the point. Say plainly that the bot
+has no AI model inside; Claude Code builds it. Call the extras
+"commands", not skills — skills are taught after the break. Watch for a
+command with no test, and rules that live in CLAUDE.md but never made it
+into the code. After Assignment 10 the bot can answer from all the new
+cards without changes — point that out then.
+
+------------------------------------------------------------------------
+ASSIGNMENT 8: Create a second card                             25 minutes
 ------------------------------------------------------------------------
 GOAL
 Create a second concept card with an ordinary prompt. Do not use a
@@ -259,14 +326,14 @@ WATCH FOR
 Important: this must stay a normal, ad-hoc prompt — not a skill. The
 inconsistency this creates between people's results is exactly what
 motivates building a skill next. Don't let anyone jump ahead to
-Assignment 7 yet. Also: fetching sources is a network call, and
-Assignment 5's own CLAUDE.md may say to ask first — some participants
+Assignment 9 yet. Also: fetching sources is a network call, and
+Assignment 6's own CLAUDE.md may say to ask first — some participants
 will treat "same method as yesterday" as implicit pre-authorization.
 Either reading is defensible; it's worth a 30-second group discussion
 if it comes up.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 7: Teach Claude the method                          45 minutes
+ASSIGNMENT 9: Teach Claude the method                          45 minutes
 ------------------------------------------------------------------------
 GOAL
 Build the create-concept-card skill from nothing — there is no starter
@@ -313,7 +380,7 @@ finishing unattended. If a participant's skill approves its own draft
 without asking, that's the thing to fix.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 8: Build the card library                           45 minutes
+ASSIGNMENT 10: Build the card library                           45 minutes
 ------------------------------------------------------------------------
 GOAL
 Use one instruction to process every approved glossary term.
@@ -343,8 +410,8 @@ for human review.
 WATCH FOR
 No page-building gap here — this only touches data via an
 already-working skill. The interesting thing verified 2026-09-15: with
-a real CLAUDE.md in place (Assignment 5) saying to ask before network
-calls, and the skill (Assignment 7) requiring sources before any claim,
+a real CLAUDE.md in place (Assignment 6) saying to ask before network
+calls, and the skill (Assignment 9) requiring sources before any claim,
 Claude Code can genuinely STOP mid-batch and ask a real clarifying
 question — which rule wins, and whether to approve each card
 individually or pre-approve the batch. If this happens live, that's the
@@ -355,7 +422,7 @@ unattended, and watch for terms it should have marked OPEN instead of
 guessing.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 9: Learning game                                    60 minutes
+ASSIGNMENT 11: Learning game                                    60 minutes
 ------------------------------------------------------------------------
 GOAL
 The game itself already works. Build checklist.md and the term-checker
@@ -420,7 +487,7 @@ participant to say that exact phrase at least once, even if
 checklist.md is thin.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 10: Connected context                               30 minutes
+ASSIGNMENT 12: Connected context                               30 minutes
 ------------------------------------------------------------------------
 GOAL
 Retrieve one authorised item from a real Worldline system, read-only.
@@ -455,6 +522,32 @@ connection fails, have them use local fixture files instead and explain
 those — the teaching point (retrieve, explain, do not modify) survives
 without a live round-trip. Keep a captured example ready to show the
 room if several people need the fallback at once.
+
+------------------------------------------------------------------------
+ASSIGNMENT 13: From ticket to feature                          25 minutes
+------------------------------------------------------------------------
+GOAL
+Use the item retrieved in Assignment 12 to practise the whole method on
+real work: explore, plan, human review (the partner), handoff.
+
+EXAMPLE PROMPT (fallback only — do not hand this out)
+------------------------------------------------------------------------
+Explain what the ticket I retrieved asks for and what remains unclear,
+marked OPEN. Then propose a plan for one Aether Library feature or
+change that would help, naming the files and how to test it. Do not edit
+anything and do not modify the external system.
+------------------------------------------------------------------------
+
+EXPECTED RESULT
+A plan reviewed by the partner in a fresh session (/clear), plus a short
+handoff note the partner could carry on from. Nothing external changed.
+
+WATCH FOR
+Everything stays read-only on the external system. Fast pairs may build
+the smallest part locally in their own Library copy. If Jira failed for
+someone in Assignment 12, they use the fixture ticket — the rest is the
+same. This is the only place in the two days where the Handoff step
+of the working method is actually practised.
 
 ========================================================================
 END OF ASSIGNMENTS
