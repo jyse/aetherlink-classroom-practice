@@ -524,30 +524,37 @@ without a live round-trip. Keep a captured example ready to show the
 room if several people need the fallback at once.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 13: From ticket to feature                          25 minutes
+ASSIGNMENT 13: Day-start workflow                             25 minutes
 ------------------------------------------------------------------------
 GOAL
-Use the item retrieved in Assignment 12 to practise the whole method on
-real work: explore, plan, human review (the partner), handoff.
+Skills (Assignments 9 and 11) plus MCP (Assignment 12) become a
+workflow: several skills in a fixed order with a human checkpoint, run
+from one sentence ("start my day"). Say the difference out loud: a skill
+packages one method, a workflow orders skills, tools and checkpoints.
 
 EXAMPLE PROMPT (fallback only — do not hand this out)
 ------------------------------------------------------------------------
-Explain what the ticket I retrieved asks for and what remains unclear,
-marked OPEN. Then propose a plan for one Aether Library feature or
-change that would help, naming the files and how to test it. Do not edit
-anything and do not modify the external system.
+Using the approved Jira connection, read-only, build a "day-start"
+workflow from 2-3 skills: fetch my open tickets, sort them (new, blocked,
+due soon, waiting for me), and draft a short morning brief with my top 3
+priorities and anything unclear marked OPEN. Never change a ticket, never
+invent a status, and say so if Jira can't be reached. Show the plan
+before editing.
 ------------------------------------------------------------------------
 
 EXPECTED RESULT
-A plan reviewed by the partner in a fresh session (/clear), plus a short
-handoff note the partner could carry on from. Nothing external changed.
+A workflow that runs from a fresh session ("start my day"), stays
+read-only, and gives a brief a human can act on. A partner copies the
+skills and runs the workflow on their own tickets.
 
 WATCH FOR
-Everything stays read-only on the external system. Fast pairs may build
-the smallest part locally in their own Library copy. If Jira failed for
-someone in Assignment 12, they use the fixture ticket — the rest is the
-same. This is the only place in the two days where the Handoff step
-of the working method is actually practised.
+The workflow can be one top-level skill that lists the steps, or an
+instruction file that names them — both are fine. Every step keeps its
+own boundaries and stop conditions. Real tickets may contain sensitive
+details: no screen sharing while it runs. If a connection fails,
+debugging it with Claude Code is part of the lesson (paste the exact
+error, check /mcp). Skills are just files, which is why the partner can
+copy them.
 
 ========================================================================
 END OF ASSIGNMENTS

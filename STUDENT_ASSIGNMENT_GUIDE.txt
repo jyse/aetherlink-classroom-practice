@@ -286,24 +286,25 @@ No external changes. A sourced, plain-language explanation of one
 connected item, with unclear points marked OPEN.
 
 ------------------------------------------------------------------------
-ASSIGNMENT 13: From ticket to feature                          25 minutes
+ASSIGNMENT 13: Day-start workflow                             25 minutes
 ------------------------------------------------------------------------
-DELIVER: a plain-language explanation, a plan for one Library feature,
-a handoff note for your partner.
+A skill is one reusable method. A workflow chains several — with tools
+and human checkpoints. Build a workflow that starts your day from Jira.
 
-- take the item you retrieved in Assignment 12 (still read-only)
-- ask Claude Code to explain what it asks for and what remains unclear
-  (OPEN)
-- ask for a plan: which Library feature or change would help, which
-  files, how to test it — no edits yet
-- give your partner the plan; in a fresh session (/clear) they review
-  it and say what is missing
-- write a short handoff note so your partner could carry on without
-  you
+SAY IT IN YOUR OWN WORDS (the examples show the idea, not exact wording):
+1. LOOK — connect Jira (/mcp), then say: "List my open tickets.
+   Read-only."
+2. DESIGN — say: "Plan a day-start workflow from 2–3 skills: fetch,
+   sort, brief. Show me the plan first."
+3. BUILD AND TEST — say: "Build those skills and a day-start that runs
+   them in order. Never change a ticket." Then /clear and say: "Start my
+   day."
+4. SHARE — a partner copies your skills and runs the workflow on their
+   own tickets.
 
 EXPECTED RESULT
-A reviewed plan (no external system changed) and a handoff note someone
-else could pick up.
+A repeatable day-start workflow: connected, read-only, several skills in
+a fixed order with a human checkpoint, tested in a fresh session.
 
 ========================================================================
 END
